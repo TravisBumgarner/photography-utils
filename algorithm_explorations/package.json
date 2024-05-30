@@ -14,9 +14,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "main2": "ts-node main2.ts",
-    "lrtags": "ts-node lrtags.ts",
-    "processPhoto": "ts-node processPhoto.ts",
-    "template": "ts-node template.ts"
+    "main": "ts-node main.ts"
   }
 }

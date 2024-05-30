@@ -83,7 +83,7 @@ const formatLens = (possibleLenses: (undefined | string)[]) => {
 
 const VALID_EXTENSIONS = ['jpg']
 
-const processPhoto = async (file: string): Promise<Metadata | { errorMessage: string }> => {
+const processPhoto = async (file: string): Promise<Metadata> => {
   const extension = file.split('.').slice(-1)[0]
   if (!extension || !VALID_EXTENSIONS.includes(extension)) {
     throw Error('invalid file type')
