@@ -241,7 +241,7 @@ const processPhoto = async (file: string): Promise<Photo | { errorMessage: strin
 }
 
 const main = async () => {
-  const result = await processPhoto('./c.jpg')
+  const result = await processPhoto('./a.jpg')
   console.log(result)
 }
 
