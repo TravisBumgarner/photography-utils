@@ -1,10 +1,10 @@
-import PageComputeMissing from './PageComputeMissing.js'
-import PageComputeMissingSetup from './PageComputeMissingSetup.js'
-import PageComputeRestore from './PageComputeRestore.js'
-import PageComputeRestoreSetup from './PageComputeRestoreSetup.js'
-import PageMainMenu from './PageMainMenu.js'
+import Exit from './Exit.js'
+import MainMenu from './MainMenu.js'
+import TagPhotos from './TagPhotos.js'
+import TagPhotosSetup from './TagPhotosSetup.js'
 
 export {
-  PageComputeMissing, PageComputeMissingSetup, PageComputeRestore, PageComputeRestoreSetup, PageMainMenu
+  Exit, MainMenu, TagPhotos,
+  TagPhotosSetup
 }
 

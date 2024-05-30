@@ -15,8 +15,8 @@ const MainMenu = ({ navigatePage }: PageProps & BasePageProps) => {
 
   const items: MenuItem[] = [
     {
-      label: "Check Files",
-      value: AppPage.ComputeMissingSetup
+      label: "Start Tagging",
+      value: AppPage.TagPhotosSetup
     },
     {
       label: "Exit",

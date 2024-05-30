@@ -6,9 +6,7 @@ import { AppPage, FilesByDirectory } from './types.js';
 import { readCache } from './utils.js';
 
 interface State {
-  activeDirectory: string,
-  backupDirectory: string,
-  restoreDirectory: string,
+  directory: string,
   activePage: AppPage,
   errorMessage: string,
   missingFilesByDirectory: FilesByDirectory | null
@@ -16,29 +14,13 @@ interface State {
 }
 
 const EMPTY_STATE: State = {
-  activeDirectory: "",
-  backupDirectory: "",
-  restoreDirectory: "",
+  directory: "",
   activePage: AppPage.MainMenu,
   errorMessage: "",
   missingFilesByDirectory: null,
   filesByDirectoryToRestore: null
 }
 
-interface SetMissingFilesByDirectory {
-  type: 'SET_MISSING_FILES_BY_DIRECTORY'
-  payload: {
-    missingFilesByDirectory: FilesByDirectory
-  }
-}
-
-interface FilesByDirectoryToRestore {
-  type: 'SET_FILES_BY_DIRECTORY_TO_RESTORE'
-  payload: {
-    filesByDirectoryToRestore: FilesByDirectory
-  }
-
-}
 
 interface SetActivePage {
   type: 'SET_ACTIVE_PAGE'
@@ -48,20 +30,16 @@ interface SetActivePage {
 }
 
 interface SetDirectories {
-  type: 'SET_DIRECTORIES'
+  type: 'SET_DIRECTORY'
   payload: {
-    activeDirectory?: string,
-    backupDirectory?: string,
-    restoreDirectory?: string
+    directory: string,
   }
 }
 
 interface HydrateFromCache {
   type: 'HYDRATE_FROM_CACHE'
   payload: {
-    activeDirectory: string,
-    backupDirectory: string,
-    restoreDirectory: string
+    directory: string,
   }
 }
 
@@ -78,8 +56,6 @@ export type Action =
   | SetActivePage
   | SetDirectories
   | SetErrorMessage
-  | SetMissingFilesByDirectory
-  | FilesByDirectoryToRestore
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
@@ -95,29 +71,16 @@ const reducer = (state: State, action: Action): State => {
         ...action.payload
       }
     }
-    case 'SET_DIRECTORIES': {
-      return {
-        ...state,
-        ...action.payload
-
-      }
-    }
     case 'SET_ERROR_MESSAGE': {
       return {
         ...state,
         ...action.payload
       }
     }
-    case 'SET_MISSING_FILES_BY_DIRECTORY': {
+    case 'SET_DIRECTORY': {
       return {
         ...state,
         ...action.payload
-      }
-    }
-    case 'SET_FILES_BY_DIRECTORY_TO_RESTORE': {
-      return {
-        ...state,
-        ...action.payload,
       }
     }
   }
@@ -138,13 +101,11 @@ const ResultsContext = ({ children }: { children: any }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useAsyncEffect(async () => {
-    const { backupDirectory, activeDirectory, restoreDirectory } = await readCache()
+    const { directory } = await readCache()
     dispatch({
       type: 'HYDRATE_FROM_CACHE',
       payload: {
-        activeDirectory: activeDirectory || '',
-        backupDirectory: backupDirectory || '',
-        restoreDirectory: restoreDirectory || '',
+        directory: directory || '',
       }
     })
     setIsLoading(false)

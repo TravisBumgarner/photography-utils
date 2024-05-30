@@ -9,10 +9,10 @@ type PageProps = {
 }
 
 const PageExit = ({ }: PageProps & Omit<BasePageProps, 'setCurrentPage'>) => {
-  const { state: { activeDirectory, backupDirectory, restoreDirectory } } = useContext(context)
+  const { state: { directory } } = useContext(context)
 
   useEffect(() => {
-    cacheData({ activeDirectory, backupDirectory, restoreDirectory })
+    cacheData({ directory })
   }, [])
 
   return (

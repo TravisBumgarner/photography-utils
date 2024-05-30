@@ -4,7 +4,7 @@ import path from 'path';
 import { Cache, CacheRunType } from './types.js';
 
 const FILENAME = 'cache.json';
-const DIRECTORY = '.backup-sync';
+const DIRECTORY = '.social-media-photo-tagging';
 
 export const cacheData = (data: Cache) => {
   const cacheDir = path.join(os.homedir(), DIRECTORY);
@@ -14,9 +14,7 @@ export const cacheData = (data: Cache) => {
 }
 
 const EMPTY_CACHE: Cache = {
-  activeDirectory: null,
-  backupDirectory: null,
-  restoreDirectory: null,
+  directory: null,
 }
 
 export const readCache = async (): Promise<Cache> => {
