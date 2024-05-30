@@ -1,14 +1,13 @@
-import * as exifr from 'exifr'
-import { Record, Static, String } from 'runtypes'
+import * as exifr from 'exifr';
+import { Record, Static, String } from 'runtypes';
+const { format } = require('date-fns');
 
 const PHOTO_DIR = 'large'
 
 const DEBUG = false // to get logs.
 
 const photoRuntype = Record({
-  id: String,
   src: String,
-  location: String,
   camera: String,
   lens: String,
   dateTaken: String,
@@ -218,7 +217,7 @@ const processPhoto = async (file: string): Promise<Photo | { errorMessage: strin
     shutterSpeed: data.ExposureTime ? formatShutterSpeed(data.ExposureTime) : '',
     aperture: data.FNumber ? formatAperture(data.FNumber) : '',
     focalLength: data.FocalLength ? `${data.FocalLength}mm` : '',
-    dateTaken: data.DateTimeOriginal,
+    dateTaken: format(data.DateTimeOriginal, 'MMMM yyyy'),
     ...metadataOverrides
   }
 
@@ -230,4 +229,9 @@ const processPhoto = async (file: string): Promise<Photo | { errorMessage: strin
   }
 }
 
+const main = async () => {
+  const result = await processPhoto('./a.jpg')
+  console.log(result)
+}
 
+main()

@@ -1,0 +1,31 @@
+Arguments: 
+  /Users/travisbumgarner/.nvm/versions/node/v20.3.0/bin/node /Users/travisbumgarner/.nvm/versions/node/v20.3.0/bin/yarn init
+
+PATH: 
+  /usr/local/opt/gst-plugins-bad/bin:/Library/Frameworks/GStreamer.framework/Commands:/Users/travisbumgarner/.yarn/bin:/Users/travisbumgarner/google-cloud-sdk/bin:/Users/travisbumgarner/.bun/bin:/Users/travisbumgarner/.nvm/versions/node/v20.3.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/go/bin:/Users/travisbumgarner/.vscode/extensions/ms-python.python-2024.6.0/python_files/deactivate/zsh:/Users/travisbumgarner/Programming/Plotter-Explorations/built-a-plotter-lib/venv/bin:/usr/local/opt/gst-plugins-bad/bin:/Library/Frameworks/GStreamer.framework/Commands:/Users/travisbumgarner/.yarn/bin:/Users/travisbumgarner/google-cloud-sdk/bin:/Users/travisbumgarner/.bun/bin:/Users/travisbumgarner/.nvm/versions/node/v20.3.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/travisbumgarner/.local/bin:/Users/travisbumgarner/Programming/monarch/platform-utils/sb:/Users/travisbumgarner/.node/bin:/Users/travisbumgarner/.local/bin:/Users/travisbumgarner/Programming/monarch/platform-utils/sb:/Users/travisbumgarner/.node/bin:/Users/travisbumgarner/.local/bin:/Users/travisbumgarner/Programming/monarch/platform-utils/sb
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.3.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/travisbumgarner/Programming/social-media-photo-tagging/package.json: Expected double-quoted property name in JSON at position 650
+      at JSON.parse (<anonymous>)
+      at /Users/travisbumgarner/.nvm/versions/node/v20.3.0/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/Users/travisbumgarner/.nvm/versions/node/v20.3.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/travisbumgarner/.nvm/versions/node/v20.3.0/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
