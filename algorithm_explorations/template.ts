@@ -3,7 +3,6 @@
 const lrTags = {
   tags: [
     'Location|Mexico',
-    'Donot|exist'
   ],
   title: 'caasd',
   description: 'ascascasc'
@@ -46,9 +45,9 @@ const getTags = (lrTag: string) => {
 
   if (!lookup[lrTag]) throw Error(`invalid tag: ${lrTag}`)
 
-  const tags = lookup[lrTag]['tag'].map(tag => `#${tag}`).join(' ')
-  const accounts = lookup[lrTag]['account'].map(account => `@${account}`).join(' ')
-  return `${tags} ${accounts}`
+  const tags = lookup[lrTag]['tag'].map(tag => `#${tag}`)
+  const accounts = lookup[lrTag]['account'].map(account => `@${account}`)
+  return [...tags, ...accounts].join(' ')
 }
 
 let output = ''
@@ -60,6 +59,5 @@ output += `The Gear - ${photoDetails.camera}, ${photoDetails.lens}\n`
 output += `The Setup - ${photoDetails.shutterSpeed}, ${photoDetails.aperture}, ${photoDetails.aperture}, ${photoDetails.focalLength} focal length\n`
 output += `\n`
 output += `${getTags(lrTags.tags[0])}\n`
-output += `${getTags(lrTags.tags[1])}\n`
 
 console.log(output)
