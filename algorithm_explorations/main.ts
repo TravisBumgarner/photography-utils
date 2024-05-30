@@ -39,20 +39,20 @@ type ParsedData = {
 // }
 
 enum SupportedCameras {
-  'Apple - iPhone 13 mini' = 'Apple - iPhone 13 mini',
-  'Canon - Canon EOS DIGITAL REBEL XS' = 'Canon - Canon EOS DIGITAL REBEL XS',
-  'Google - Pixel 3' = 'Google - Pixel 3',
-  'motorola - moto x4' = 'motorola - moto x4',
-  'NIKON CORPORATION - NIKON D3400' = 'NIKON CORPORATION - NIKON D3400',
-  'NIKON CORPORATION - NIKON D5300' = 'NIKON CORPORATION - NIKON D5300',
-  'NIKON CORPORATION - NIKON D7500' = 'NIKON CORPORATION - NIKON D7500',
-  'NIKON CORPORATION - NIKON Z 5' = 'NIKON CORPORATION - NIKON Z 5',
-  'NORITSU KOKI - QSS-32_33' = 'NORITSU KOKI - QSS-32_33',
-  'NORITSU KOKI - EZ Controller' = 'NORITSU KOKI - EZ Controller',
-  'SONY - DSC-RX100' = 'SONY - DSC-RX100',
-  'SONY - SLT-A55V' = 'SONY - SLT-A55V',
-  'SONY - DSLR-A290' = 'SONY - DSLR-A290',
-  'undefined - undefined' = 'undefined - undefined',
+  iPhone13 = 'Apple - iPhone 13 mini',
+  CanonEOSRebel = 'Canon - Canon EOS DIGITAL REBEL XS',
+  Pixel3 = 'Google - Pixel 3',
+  MotoX4 = 'motorola - moto x4',
+  NikonD3400 = 'NIKON CORPORATION - NIKON D3400',
+  NikonD5300 = 'NIKON CORPORATION - NIKON D5300',
+  NikonD7500 = 'NIKON CORPORATION - NIKON D7500',
+  NikoNZ5 = 'NIKON CORPORATION - NIKON Z 5',
+  Scanner1 = 'NORITSU KOKI - QSS-32_33',
+  Scanner2 = 'NORITSU KOKI - EZ Controller',
+  SonyRX100 = 'SONY - DSC-RX100',
+  SonyA55 = 'SONY - SLT-A55V',
+  SonyA290 = 'SONY - DSLR-A290',
+  Unknown = 'undefined - undefined',
 }
 
 
@@ -129,75 +129,86 @@ const processPhoto = async (file: string): Promise<Photo | { errorMessage: strin
 
   switch (camera) {
     // Film Scanner
-    case SupportedCameras['NORITSU KOKI - QSS-32_33']:
-    case SupportedCameras['NORITSU KOKI - EZ Controller']: {
+    case SupportedCameras.Scanner1:
+    case SupportedCameras.Scanner2: {
       metadataOverrides = {
-        camera: '',
-        lens: '',
-        iso: '',
-        shutterSpeed: '',
-        aperture: '',
-        focalLength: '',
-        dateTaken: ''
+        camera: 'REPLACE',
+        lens: 'REPLACE',
+        iso: 'REPLACE',
+        shutterSpeed: 'REPLACE',
+        aperture: 'REPLACE',
+        focalLength: 'REPLACE',
+        dateTaken: 'REPLACE'
       }
       break
     }
-    case SupportedCameras['SONY - DSLR-A290']: {
+    case SupportedCameras.SonyA290: {
       metadataOverrides = {
         camera: 'Sony A290'
       }
       break
     }
-    case SupportedCameras['SONY - SLT-A55V']: {
+    case SupportedCameras.SonyA55: {
       metadataOverrides = {
         camera: 'Sony A55',
         lens: data.LensModel === '----' ? '' : data.LensModel // Some lens used resulted in this.
       }
       break
     }
-    case SupportedCameras['SONY - DSC-RX100']: {
+    case SupportedCameras.SonyRX100: {
       metadataOverrides = {
         camera: 'Sony RX100'
       }
       break
     }
-    case SupportedCameras['NIKON CORPORATION - NIKON D5300']:
-    case SupportedCameras['NIKON CORPORATION - NIKON D3400']:
-    case SupportedCameras['NIKON CORPORATION - NIKON Z 5']:
-    case SupportedCameras['NIKON CORPORATION - NIKON D7500']: {
+    case SupportedCameras.NikoNZ5:
+    case SupportedCameras.NikonD3400:
+    case SupportedCameras.NikonD5300:
+    case SupportedCameras.NikonD7500: {
+      const NIKON_LOOKUP = {
+        'NIKON CORPORATION - NIKON D5300': "Nikon D5300",
+        'NIKON CORPORATION - NIKON D3400': "Nikon D3400",
+        'NIKON CORPORATION - NIKON Z 5': "Nikon Z5",
+        'NIKON CORPORATION - NIKON D7500': "Nikon D7500",
+      }
+
+      metadataOverrides = {
+        camera: NIKON_LOOKUP[camera]
+      }
+
       break
     }
-    case SupportedCameras['Apple - iPhone 13 mini']: {
+    case SupportedCameras.iPhone13: {
       metadataOverrides = {
         camera: 'iPhone 13',
         lens: ''
       }
       break
     }
-    case SupportedCameras['undefined - undefined']: {
+    case SupportedCameras.Unknown: {
       // Unclear how these ended up in lightroom
       metadataOverrides = {
-        camera: '',
-        iso: '',
-        shutterSpeed: '',
-        aperture: '',
-        focalLength: '',
-        dateTaken: ''
+        camera: 'REPLACE',
+        iso: 'REPLACE',
+        shutterSpeed: 'REPLACE',
+        aperture: 'REPLACE',
+        focalLength: 'REPLACE',
+        dateTaken: 'REPLACE'
       }
       break
     }
-    case SupportedCameras['motorola - moto x4']: {
+    case SupportedCameras.MotoX4: {
       metadataOverrides = {
         lens: ''
       }
       break
     }
-    case SupportedCameras['Canon - Canon EOS DIGITAL REBEL XS']: {
+    case SupportedCameras.CanonEOSRebel: {
       metadataOverrides = {
       }
       break
     }
-    case SupportedCameras['Google - Pixel 3']: {
+    case SupportedCameras.Pixel3: {
       metadataOverrides = {
         lens: ''
       }
@@ -230,7 +241,7 @@ const processPhoto = async (file: string): Promise<Photo | { errorMessage: strin
 }
 
 const main = async () => {
-  const result = await processPhoto('./a.jpg')
+  const result = await processPhoto('./c.jpg')
   console.log(result)
 }
 
