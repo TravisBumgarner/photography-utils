@@ -1,9 +1,5 @@
-import findMissingFiles from './findMissingFiles.js';
-import generateFilesByDirectory from './generateFilesByDirectory.js';
-import walkDirectoryRecursivelyAndHash from './walkDirectoryRecursivelyAndHash.js';
+import readPhoto from './readPhoto';
 
 export {
-  findMissingFiles,
-  generateFilesByDirectory,
-  walkDirectoryRecursivelyAndHash
+  readPhoto
 };
