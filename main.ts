@@ -1,11 +1,11 @@
 import fs from 'fs';
 import path from 'path';
-import processPhoto from "./metadata";
-import getTags from "./tags";
-import createTemplate from './template';
+import processPhoto from "./src/metadata";
+import getTags from "./src/tags";
+import createTemplate from './src/template';
 
 const main = async () => {
-  const directoryPath = './photos'; // specify the directory containing photos
+  const directoryPath = './photos';
   const errorsByFile: Record<string, string[]> = {}
 
   let templates = "";
@@ -40,8 +40,6 @@ const main = async () => {
     } else {
       console.log(templates);
     }
-
-
   });
 }
 
