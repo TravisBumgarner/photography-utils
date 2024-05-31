@@ -2,11 +2,23 @@ import { Value } from "../types"
 
 const SocialEvent: Record<string, Value> = {
   DayOfTheDead: {
-    tags: [],
+    tags: [
+      "dayofthedead",
+      "DiaDeMuertos",
+      "DiaDeLosMuertos",
+      "ddlm ",
+      "marigolds",
+    ],
     accounts: []
   },
   MexicoCityFireworksFestival: {
-    tags: [],
+    tags: [
+      "torostultepec",
+      "pirotecniatultepec",
+      "tultepec",
+      "tultepeccapitaldelapirotécnia ",
+      "fireworks",
+    ],
     accounts: []
   },
 }

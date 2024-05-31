@@ -2,7 +2,13 @@ import { Value } from "../types"
 
 const Camera: Record<string, Value> = {
   NikonZ5: {
-    tags: [],
+    tags: [
+      "nikon",
+      "nikonz5",
+      "nikonphotography",
+      "nikonphotographer",
+
+    ],
     accounts: []
   },
   Pixel3: {

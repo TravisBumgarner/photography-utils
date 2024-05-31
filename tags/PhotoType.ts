@@ -2,31 +2,68 @@ import { Value } from '../types'
 
 const PhotoType: Record<string, Value> = {
   Animals: {
-    tags: [],
+    tags: [
+
+      "animalkingdom",
+      "naturewanderers",
+      "animallovers",
+      "everything_animals",
+    ],
     accounts: []
   },
   Leaves: {
-    tags: [],
+    tags: [
+
+      "leafpeeping",
+      "autumnleaes",
+      "fallcolors",
+    ],
     accounts: []
   },
   BlackAndWhite: {
-    tags: [],
+    tags: [
+      "bnw",
+      "bnwphotography",
+      "bnwmood",
+      "bnw_captures",
+      "bnwphoto",
+    ],
     accounts: []
   },
   Clouds: {
-    tags: [],
+    tags: [
+      "clouds",
+      "cloudscape",
+      "cloudchaser",
+      "cloudphotography",
+      "cloudlovers",
+    ],
     accounts: []
   },
   Stars: {
-    tags: [],
+    tags: [
+      "astrophotography",
+      "moonlovers",
+      "astronomy",
+    ],
     accounts: []
   },
   Storms: {
-    tags: [],
+    tags: [
+      "lightening",
+      "stormphotography",
+      "stormchasers",
+      "stormclouds",
+      "thunderstorms",
+    ],
     accounts: []
   },
   Sunsets: {
-    tags: [],
+    tags: [
+      "sunset",
+      "sunsetlovers",
+      "sunsets",
+    ],
     accounts: []
   }
 }

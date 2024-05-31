@@ -2,11 +2,17 @@ import { Value } from '../types'
 
 const Special: Record<string, Value> = {
   NatGeoYourShot: {
-    tags: [],
+    tags: [
+      "yourshotphotographer"
+    ],
     accounts: []
   },
   ShadowMagazine: {
-    tags: [],
+    tags: [
+      "shadows_magazine",
+      "shadows",
+      "shadowart",
+    ],
     accounts: []
   },
 }

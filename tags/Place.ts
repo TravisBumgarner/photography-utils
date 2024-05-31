@@ -2,37 +2,78 @@ import { Value } from "../types"
 
 const Mexico: Record<string, Value> = {
   MexicoCity: {
-    tags: ['test2'],
-    accounts: ['test3']
+    tags: [
+      "cdmx",
+      "mexicocity",
+      "mexicodf",
+    ],
+    accounts: []
   },
   Country: {
-    tags: ['test1'],
-    accounts: ['test4']
+    tags: [
+      "mexico",
+      "mexicomagico",
+      "mexicotravel",
+      "mexicolindo",
+    ],
+    accounts: []
   }
 }
 
 const USA: Record<string, Record<string, Value>> = {
   Arizona: {
     State: {
-      tags: [],
+      tags: [
+        "arizona",
+        "az",
+      ],
+      accounts: []
+    },
+    ApacheJunction: {
+      tags: [
+        "myphx",
+        "cactus",
+        "cactuslover",
+        "cactusgram",
+        "apachejunction",
+        "phoenix",
+      ],
       accounts: []
     },
   },
   Colorado: {
     State: {
-      tags: [],
+      tags: [
+        "colorado",
+        "coloradophotographer",
+        "coloradophotography",
+        "coloradolove",
+      ],
       accounts: []
     },
   },
   Montana: {
     State: {
-      tags: [],
+      tags: [
+        "montana",
+        "montanacolors",
+        "montanalife",
+        "montanaliving",
+        "montanaphotographer",
+      ],
       accounts: []
     },
   },
   Utah: {
     State: {
-      tags: [],
+      tags: [
+        "utah",
+        "utahphotographer",
+        "utahphotography",
+        "utahisbeautiful",
+        "utahtravels",
+        "utah",
+      ],
       accounts: []
     },
   },
@@ -40,16 +81,33 @@ const USA: Record<string, Record<string, Value>> = {
 
 const NationalPark: Record<string, Value> = {
   Arches: {
-    tags: [],
-    accounts: []
+    tags: [
+      "archesnationalpark",
+      "archesnps",
+    ],
+    accounts: [
+      "archesnps"
+    ]
   },
   Banff: {
-    tags: [],
-    accounts: []
+    tags: [
+      "banff",
+      "banffnationalpark",
+      "banffcanada",
+      "banffalberta ",
+    ],
+    accounts: [
+      "banff.national.park"
+    ]
   },
   Glacier: {
-    tags: [],
-    accounts: []
+    tags: [
+      "glaciernationalpark",
+      "glaciernps ",
+    ],
+    accounts: [
+      "glaciernps "
+    ]
   },
 }
 
