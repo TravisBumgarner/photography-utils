@@ -3,14 +3,14 @@ import { Array as ArrayRunType, Record, Static, String } from 'runtypes';
 const { format } = require('date-fns');
 
 type Sidecar = {
-  lr: {
-    hierarchicalSubject: string[]
+  lr?: {
+    hierarchicalSubject?: string[]
   },
-  dc: {
-    title: {
+  dc?: {
+    title?: {
       value: string
     },
-    description: {
+    description?: {
       value: string
     }
   }
@@ -83,7 +83,7 @@ const formatLens = (possibleLenses: (undefined | string)[]) => {
 
 const VALID_EXTENSIONS = ['jpg']
 
-const processPhoto = async (file: string): Promise<Metadata> => {
+const processPhoto = async (file: string): Promise<Metadata | { errors: string[] }> => {
   const extension = file.split('.').slice(-1)[0]
   if (!extension || !VALID_EXTENSIONS.includes(extension)) {
     throw Error('invalid file type')
@@ -189,27 +189,47 @@ const processPhoto = async (file: string): Promise<Metadata> => {
       throw Error('unsupported camera' + camera)
     }
   }
+  const errors = []
 
-  console.log('ruda', data)
-  console.log('')
+  if (!sidecar.dc) {
+    errors.push('No Lightroom dc data for title and description')
+    return { errors }
+  }
 
-  const results = {
+  if (!sidecar.lr) {
+    errors.push('No Lightroom lr data for hierarchicalSubject')
+    return { errors }
+  }
+
+  if (!sidecar.lr.hierarchicalSubject) {
+    errors.push('No Lightroom hierarchicalSubject')
+    return { errors }
+  }
+
+  const tags = Array.isArray(sidecar.lr.hierarchicalSubject) ? sidecar.lr.hierarchicalSubject : [sidecar.lr.hierarchicalSubject]
+
+
+  if (!sidecar.dc.title) errors.push('Title')
+  if (!sidecar.dc.description) errors.push('Description')
+  if (tags.length === 0) errors.push('Tags')
+
+  if (!sidecar.dc.description || !sidecar.dc.title || tags.length === 0) {
+    return { errors }
+  }
+
+  return {
     camera: `${data.Make} - ${data.Model}`,
     lens: formatLens([data.Lens, data.LensModel]),
     iso: data.ISO ? `ISO ${data.ISO}` : '',
     shutterSpeed: data.ExposureTime ? formatShutterSpeed(data.ExposureTime) : '',
     aperture: data.FNumber ? formatAperture(data.FNumber) : '',
     focalLength: data.FocalLength ? `${data.FocalLength}mm` : '',
-    dateTaken: format(data.DateTimeOriginal, 'MMMM yyyy'),
+    dateTaken: data.DateTimeOriginal ? format(data.DateTimeOriginal, 'MMMM yyyy') : "REPLACE",
     title: sidecar.dc.title.value,
     description: sidecar.dc.description.value,
-    tags: Array.isArray(sidecar.lr.hierarchicalSubject) ? sidecar.lr.hierarchicalSubject : [sidecar.lr.hierarchicalSubject],
-    ...metadataOverrides
+    tags,
+    ...metadataOverrides,
   }
-
-  console.log('result', results)
-
-  return metadataRunType.check(results)
 }
 
 export default processPhoto
