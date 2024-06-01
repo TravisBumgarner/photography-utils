@@ -1,18 +1,17 @@
+import { Record } from 'runtypes'
+
 import Camera from "./Camera"
 import SocialEvent from "./SocialEvent"
-import Place from "./Place"
+import Place from "./place"
 import PhotoType from "./PhotoType"
 import Special from "./Special"
 
 const TAGS = {
   Camera,
-  SocialEvent,
   Place,
   PhotoType,
+  SocialEvent,
   Special
 }
-
-console.log('ruda hello?')
-console.log(TAGS)
 
 export default TAGS

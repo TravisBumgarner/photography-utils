@@ -1,26 +1,28 @@
 import { Value } from "../types"
 
-const SocialEvent: Record<string, Value> = {
-  DayOfTheDead: {
+const DayOfTheDead: Value = {
     tags: [
-      "dayofthedead",
-      "DiaDeMuertos",
-      "DiaDeLosMuertos",
-      "ddlm ",
-      "marigolds",
+        "dayofthedead",
+        "DiaDeMuertos",
+        "DiaDeLosMuertos",
+        "ddlm ",
+        "marigolds",
     ],
     accounts: []
-  },
-  MexicoCityFireworksFestival: {
-    tags: [
-      "torostultepec",
-      "pirotecniatultepec",
-      "tultepec",
-      "tultepeccapitaldelapirotécnia ",
-      "fireworks",
-    ],
-    accounts: []
-  },
-}
+};
 
-export default SocialEvent
+const MexicoCityFireworksFestival: Value = {
+    tags: [
+        "torostultepec",
+        "pirotecniatultepec",
+        "tultepec",
+        "tultepeccapitaldelapirotécnia ",
+        "fireworks",
+    ],
+    accounts: []
+};
+
+const SocialEvent = { DayOfTheDead, MexicoCityFireworksFestival };
+
+export { DayOfTheDead, MexicoCityFireworksFestival };
+export default SocialEvent;

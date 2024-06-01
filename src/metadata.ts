@@ -1,65 +1,9 @@
 import * as exifr from 'exifr';
-import { Array as ArrayRunType, Record, Static, String } from 'runtypes';
+
+import metadataOverride from './metadataOverride';
+import { Metadata, ParsedData, Sidecar, SupportedCameras } from './types';
 const { format } = require('date-fns');
 
-type Sidecar = {
-  lr?: {
-    hierarchicalSubject?: string[]
-  },
-  dc?: {
-    title?: {
-      value: string
-    },
-    description?: {
-      value: string
-    }
-  }
-}
-
-const metadataRunType = Record({
-  camera: String,
-  lens: String,
-  dateTaken: String,
-  aperture: String,
-  shutterSpeed: String,
-  iso: String,
-  focalLength: String,
-  tags: ArrayRunType(String),
-  title: String,
-  description: String
-})
-export type Metadata = Static<typeof metadataRunType>
-
-type ParsedData = {
-  DateTimeOriginal: string
-  Lens?: string
-  LensModel?: string
-  RawFileName: string
-  Make: string
-  Model: string
-  ExposureTime?: number
-  FNumber?: number
-  ExposureProgram?: string
-  ISO?: number
-  FocalLength?: number
-}
-
-enum SupportedCameras {
-  iPhone13 = 'Apple - iPhone 13 mini',
-  CanonEOSRebel = 'Canon - Canon EOS DIGITAL REBEL XS',
-  Pixel3 = 'Google - Pixel 3',
-  MotoX4 = 'motorola - moto x4',
-  NikonD3400 = 'NIKON CORPORATION - NIKON D3400',
-  NikonD5300 = 'NIKON CORPORATION - NIKON D5300',
-  NikonD7500 = 'NIKON CORPORATION - NIKON D7500',
-  NikoNZ5 = 'NIKON CORPORATION - NIKON Z 5',
-  Scanner1 = 'NORITSU KOKI - QSS-32_33',
-  Scanner2 = 'NORITSU KOKI - EZ Controller',
-  SonyRX100 = 'SONY - DSC-RX100',
-  SonyA55 = 'SONY - SLT-A55V',
-  SonyA290 = 'SONY - DSLR-A290',
-  Unknown = 'undefined - undefined',
-}
 
 const formatShutterSpeed = (shutterSpeed: number) => {
   if (shutterSpeed < 1) {
@@ -89,106 +33,15 @@ const processPhoto = async (file: string): Promise<Metadata | { errors: string[]
     throw Error('invalid file type')
   }
 
-
   const data = await exifr.parse(file) as ParsedData
   const sidecar = await exifr.sidecar(file) as unknown as Sidecar
 
   // For when generating the metadata isn't the same as all the other image types.
-  let metadataOverrides: Partial<Metadata> = {}
 
-  const camera = `${data.Make} - ${data.Model}` as string as SupportedCameras // Switch case default will catch if this errors. 
+  const camera = `${data.Make} - ${data.Model}` as string as SupportedCameras 
 
-  switch (camera) {
-    // Film Scanner
-    case SupportedCameras.Scanner1:
-    case SupportedCameras.Scanner2: {
-      metadataOverrides = {
-        camera: 'REPLACE',
-        lens: 'REPLACE',
-        iso: 'REPLACE',
-        shutterSpeed: 'REPLACE',
-        aperture: 'REPLACE',
-        focalLength: 'REPLACE',
-        dateTaken: 'REPLACE'
-      }
-      break
-    }
-    case SupportedCameras.SonyA290: {
-      metadataOverrides = {
-        camera: 'Sony A290'
-      }
-      break
-    }
-    case SupportedCameras.SonyA55: {
-      metadataOverrides = {
-        camera: 'Sony A55',
-        lens: data.LensModel === '----' ? '' : data.LensModel // Some lens used resulted in this.
-      }
-      break
-    }
-    case SupportedCameras.SonyRX100: {
-      metadataOverrides = {
-        camera: 'Sony RX100'
-      }
-      break
-    }
-    case SupportedCameras.NikoNZ5:
-    case SupportedCameras.NikonD3400:
-    case SupportedCameras.NikonD5300:
-    case SupportedCameras.NikonD7500: {
-      const NIKON_LOOKUP = {
-        'NIKON CORPORATION - NIKON D5300': "Nikon D5300",
-        'NIKON CORPORATION - NIKON D3400': "Nikon D3400",
-        'NIKON CORPORATION - NIKON Z 5': "Nikon Z5",
-        'NIKON CORPORATION - NIKON D7500': "Nikon D7500",
-      }
+  const metadataOverrides = metadataOverride(camera, data)
 
-      metadataOverrides = {
-        camera: NIKON_LOOKUP[camera]
-      }
-
-      break
-    }
-    case SupportedCameras.iPhone13: {
-      metadataOverrides = {
-        camera: 'iPhone 13',
-        lens: ''
-      }
-      break
-    }
-    case SupportedCameras.Unknown: {
-      // Unclear how these ended up in lightroom
-      metadataOverrides = {
-        camera: 'REPLACE',
-        iso: 'REPLACE',
-        shutterSpeed: 'REPLACE',
-        aperture: 'REPLACE',
-        focalLength: 'REPLACE',
-        dateTaken: 'REPLACE'
-      }
-      break
-    }
-    case SupportedCameras.MotoX4: {
-      metadataOverrides = {
-        lens: ''
-      }
-      break
-    }
-    case SupportedCameras.CanonEOSRebel: {
-      metadataOverrides = {
-      }
-      break
-    }
-    case SupportedCameras.Pixel3: {
-      metadataOverrides = {
-        lens: ''
-      }
-      break
-    }
-    default: {
-      throw Error('unsupported camera' + camera)
-    }
-  }
   const errors = []
 
   if (!sidecar.dc) {

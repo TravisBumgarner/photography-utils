@@ -7,14 +7,7 @@ const Special: Record<string, Value> = {
     ],
     accounts: []
   },
-  ShadowMagazine: {
-    tags: [
-      "shadows_magazine",
-      "shadows",
-      "shadowart",
-    ],
-    accounts: []
-  },
+
 }
 
 export default Special

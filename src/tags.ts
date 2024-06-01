@@ -1,6 +1,7 @@
 import TAGS from "./tags/index";
+import { Value } from "./types";
 
-function getTagsAndAccounts(hierarchyTagParts: string[], TAGS: any): { tags: string[], accounts: string[] } | null {
+function lightroomTagToInstagramTags(hierarchyTagParts: string[], TAGS: any): { tags: string[], accounts: string[] } | null {
   if (hierarchyTagParts.length === 0) {
     return TAGS.tags && TAGS.accounts ? { tags: TAGS.tags, accounts: TAGS.accounts } : null;
   }
@@ -10,35 +11,49 @@ function getTagsAndAccounts(hierarchyTagParts: string[], TAGS: any): { tags: str
     return null;
   }
 
-  return getTagsAndAccounts(rest, TAGS[first]);
+  return lightroomTagToInstagramTags(rest, TAGS[first]);
 }
 
 
-const getTags = (hierarchyTags: string[]): { errors: string[] } | { tags: string } => {
+const lightroomTagsToInstragramTemplateString = (lightroomTags: string[]): { errors: string[] } | { templateString: string, tagsAndAccountsPreview: Record<string, Value> } => {
   const errors = []
 
-  const tags = []
-  const accounts = []
+  const instagramTags = []
+  const instagramAccounts = []
+  const tagsAndAccountsPreview: Record<string, Value> = {}
 
-  for (const hierarchyTag of hierarchyTags) {
-    const hierarchyTagParts = hierarchyTag.split('|');
-    const result = getTagsAndAccounts(hierarchyTagParts, TAGS);
-    if (!result) {
-      errors.push(`Unknown hierarchy tag: ${hierarchyTag}`)
+  for (let lightroomTag of lightroomTags) {
+    if (!lightroomTag.includes('cameracoffeewander')) {
+      console.log("\t\tSkipping tag that doesn't include cameracoffeewander: ", lightroomTag)
       continue
     }
 
-    tags.push(...result.tags);
-    accounts.push(...result.accounts);
+    lightroomTag = lightroomTag.replace('cameracoffeewander|', '')
+
+
+    const lightroomTagParts = [...lightroomTag.split('|')];
+    const result = lightroomTagToInstagramTags(lightroomTagParts, TAGS);
+    if (!result) {
+      errors.push(`Unknown hierarchy tag: ${lightroomTag}`)
+      continue
+    }
+
+    instagramTags.push(...result.tags);
+    instagramAccounts.push(...result.accounts);
+    tagsAndAccountsPreview[lightroomTag] = { tags: result.tags, accounts: result.accounts }
   }
 
   if (errors.length > 0) {
     return { errors }
   }
 
-  const parsedTags = tags.map(tag => `#${tag}`)
-  const parsedAccounts = accounts.map(account => `@${account}`)
-  return { tags: [...parsedAccounts, ...parsedTags].join(' ') }
+  const parsedTags = instagramTags.map(tag => `#${tag.trim()}`)
+  const parsedAccounts = instagramAccounts.map(account => `@${account.trim()}`)
+  const templateString = [...parsedAccounts, ...parsedTags].join(' ')
+  if ("##" in instagramTags || "@@" in instagramTags || "#@" in instagramTags || "@#" in instagramTags) {
+    return { errors: ["Invalid tag or account name with ##, @@, #@, or @#"] }
+  }
+  return { templateString, tagsAndAccountsPreview }
 }
 
-export default getTags
+export default lightroomTagsToInstragramTemplateString
