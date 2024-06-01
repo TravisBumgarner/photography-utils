@@ -66,7 +66,7 @@ const processPhoto = async (file: string): Promise<Metadata | { errors: string[]
   if (!sidecar.dc.description) console.log('\t\tNo Description')
   if (tags.length === 0) errors.push('Tags')
 
-  if (!sidecar.dc.description || !sidecar.dc.title || tags.length === 0) {
+  if (!sidecar.dc.title || tags.length === 0) {
     return { errors }
   }
 
@@ -79,7 +79,7 @@ const processPhoto = async (file: string): Promise<Metadata | { errors: string[]
     focalLength: data.FocalLength ? `${data.FocalLength}mm` : '',
     dateTaken: data.DateTimeOriginal ? format(data.DateTimeOriginal, 'MMMM yyyy') : "REPLACE",
     title: sidecar.dc.title.value,
-    description: sidecar.dc.description.value,
+    description: sidecar.dc.description?.value || '',
     tags,
     ...metadataOverrides,
   }
