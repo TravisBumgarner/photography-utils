@@ -1,12 +1,12 @@
 import { TagsAndAccounts } from "../../types";
 
 const Baja: TagsAndAccounts = {
-    accounts: [
+    tags: [
         "lapaz",
         "bajacalifornia",
         "baja",
     ],
-    tags: [
+    accounts: [
     ]
 }
 

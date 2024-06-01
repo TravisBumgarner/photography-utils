@@ -119,6 +119,8 @@ const iPhone15: TagsAndAccounts = {
 const YashicaC: TagsAndAccounts = {
   tags: [
     ..._120mmFilmPhotography.tags,
+    "yashicac",
+    "yashica",
   ],
   accounts: [
     ..._120mmFilmPhotography.accounts

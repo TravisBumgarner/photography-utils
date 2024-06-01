@@ -71,6 +71,17 @@ const Portrait: TagsAndAccounts = {
   ]
 };
 
+const Shadows = {
+  tags: [
+    "shadows_magazine",
+    "shadows",
+    "shadowart",
+  ],
+  accounts: [
+
+  ]
+}
+
 const Stars: TagsAndAccounts = {
   tags: [
     "astrophotography",
@@ -96,16 +107,20 @@ const Storms: TagsAndAccounts = {
   ]
 };
 
-const Shadows = {
+const Street: TagsAndAccounts = {
   tags: [
-    "shadows_magazine",
-    "shadows",
-    "shadowart",
+    "street_perfection",
+    "streetphotography",
+    "street",
+    "streetphotographers",
+    "streetclassics",
+    "streetdreamsmag",
+    "streetphotographer"
   ],
   accounts: [
 
   ]
-}
+};
 
 const Sunsets: TagsAndAccounts = {
   tags: [
@@ -128,6 +143,7 @@ const PhotoType = {
   Stars,
   Shadows,
   Storms,
+  Street,
   Sunsets
 }
 

@@ -29,6 +29,9 @@
         - [x] Put in Subfolder `cameracoffeewander_template_ingest`
         - Existing Files
             - Ask what to do
+    - File Renaming
+        - Custom Settings
+            - `{Sequence 01}-{Filename}`
     - File Settings
         Image Format
             - JPEG
