@@ -11,6 +11,29 @@ const _FilmPhotography: TagsAndAccounts = {
   ]
 }
 
+const _35mmFilmPhotography: TagsAndAccounts = {
+  tags: [
+    ..._FilmPhotography.tags,
+    "35mm",
+    "thedaily35mm",
+    "35mmfilm",
+  ],
+  accounts: [
+    ..._FilmPhotography.accounts
+  ]
+}
+
+const _120mmFilmPhotography: TagsAndAccounts = {
+  tags: [
+    ..._FilmPhotography.tags,
+    "120",
+    "120film",
+  ],
+  accounts: [
+    ..._FilmPhotography.accounts
+  ]
+}
+
 const _iPhonePhotography: TagsAndAccounts = {
   tags: [
     "iphonephotography",
@@ -37,12 +60,14 @@ const NikonZ5: TagsAndAccounts = {
 const NikonSLR: TagsAndAccounts = {
   tags: [
     ..._FilmPhotography.tags,
+    ..._35mmFilmPhotography.tags,
     "nikon",
     "nikonphotography"
 
   ],
   accounts: [
-    ..._FilmPhotography.accounts
+    ..._FilmPhotography.accounts,
+    ..._35mmFilmPhotography.accounts
   ]
 }
 
@@ -93,10 +118,10 @@ const iPhone15: TagsAndAccounts = {
 
 const YashicaC: TagsAndAccounts = {
   tags: [
-    ..._FilmPhotography.tags,
+    ..._120mmFilmPhotography.tags,
   ],
   accounts: [
-    ..._FilmPhotography.accounts,
+    ..._120mmFilmPhotography.accounts
   ]
 };
 
@@ -112,9 +137,11 @@ const DJIMini3Pro: TagsAndAccounts = {
 const UnknownFilmCamera: TagsAndAccounts = {
   tags: [
     ..._FilmPhotography.tags,
+    ..._35mmFilmPhotography.tags,
   ],
   accounts: [
     ..._FilmPhotography.accounts,
+    ..._35mmFilmPhotography.accounts
   ]
 };
 
