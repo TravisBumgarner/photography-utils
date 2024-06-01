@@ -38,7 +38,7 @@ const processPhoto = async (file: string): Promise<Metadata | { errors: string[]
 
   // For when generating the metadata isn't the same as all the other image types.
 
-  const camera = `${data.Make} - ${data.Model}` as string as SupportedCameras 
+  const camera = `${data.Make} - ${data.Model}` as string as SupportedCameras
 
   const metadataOverrides = metadataOverride(camera, data)
 
@@ -63,7 +63,7 @@ const processPhoto = async (file: string): Promise<Metadata | { errors: string[]
 
 
   if (!sidecar.dc.title) errors.push('Title')
-  if (!sidecar.dc.description) errors.push('Description')
+  if (!sidecar.dc.description) console.log('\t\tNo Description')
   if (tags.length === 0) errors.push('Tags')
 
   if (!sidecar.dc.description || !sidecar.dc.title || tags.length === 0) {

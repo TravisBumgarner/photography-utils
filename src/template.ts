@@ -13,8 +13,8 @@ const createTemplate = ({ metadata, accountsAndTagsTemplateString, tagsAndAccoun
 
   output += `${metadata.title.trim()} (${metadata.dateTaken})\n`
   output += `\n`
-  output += `${metadata.description.trim()}\n`
-  output += `\n`
+  if (metadata.description) output += `${metadata.description.trim()}\n`
+  if (metadata.description) output += `\n`
   output += `The Gear - ${metadata.camera}, ${metadata.lens}\n`
   output += `The Setup - ${metadata.shutterSpeed}, ${metadata.aperture}, ${metadata.focalLength} focal length\n`
   output += `\n`

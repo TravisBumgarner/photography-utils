@@ -8,8 +8,9 @@ const Portra400: TagsAndAccounts = {
     ]
 };
 
-const FilmType
-    = { Portra400 };
+const FilmType = {
+    Portra400
+};
 
 export default FilmType
     ;

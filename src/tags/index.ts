@@ -1,5 +1,3 @@
-import { Record } from 'runtypes'
-
 import Camera from "./Camera"
 import SocialEvent from "./SocialEvent"
 import Place from "./place"
