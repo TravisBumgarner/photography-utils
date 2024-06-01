@@ -10,7 +10,10 @@
 4. Export photos
     - Run this script (`yarn main`)
     - Open Buffer
-    - Queue each photo and add custom tags
+    - Queue each photo
+        - Spellcheck each template
+        - Output from template
+        - Location
     - Queue photos and move to `04 Queued`
 5. Once photos are posted
     - Move to `05 Posted`
