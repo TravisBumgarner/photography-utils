@@ -1,6 +1,6 @@
-import { Metadata, Value } from "./types"
+import { Metadata, TagsAndAccounts } from "./types"
 
-const createTemplate = ({ metadata, accountsAndTagsTemplateString, tagsAndAccountsPreview }: { metadata: Metadata, accountsAndTagsTemplateString: string, tagsAndAccountsPreview: Record<string, Value> }) => {
+const createTemplate = ({ metadata, accountsAndTagsTemplateString, tagsAndAccountsPreview }: { metadata: Metadata, accountsAndTagsTemplateString: string, tagsAndAccountsPreview: Record<string, TagsAndAccounts> }) => {
   let output = ''
 
   output += '\n\n\n------PREVIEW-----\n'

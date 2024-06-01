@@ -1,12 +1,13 @@
-import { Value } from "../../types";
+import { TagsAndAccounts } from "../../types";
 
-const Arizona: { State: Value, ApacheJunction: Value } = {
+const Arizona: { State: TagsAndAccounts, ApacheJunction: TagsAndAccounts } = {
     State: {
         tags: [
             "arizona",
             "az",
         ],
-        accounts: []
+        accounts: [
+        ]
     },
     ApacheJunction: {
         tags: [
@@ -17,11 +18,12 @@ const Arizona: { State: Value, ApacheJunction: Value } = {
             "apachejunction",
             "phoenix",
         ],
-        accounts: []
+        accounts: [
+        ]
     },
 };
 
-const Colorado: { State: Value } = {
+const Colorado: Record<string, TagsAndAccounts> = {
     State: {
         tags: [
             "colorado",
@@ -29,11 +31,12 @@ const Colorado: { State: Value } = {
             "coloradophotography",
             "coloradolove",
         ],
-        accounts: []
+        accounts: [
+        ]
     },
 };
 
-const Montana: { State: Value } = {
+const Montana: Record<string, TagsAndAccounts> = {
     State: {
         tags: [
             "montana",
@@ -42,11 +45,26 @@ const Montana: { State: Value } = {
             "montanaliving",
             "montanaphotographer",
         ],
-        accounts: []
+        accounts: [
+        ]
     },
 };
 
-const Utah: { State: Value } = {
+const Louisiana: Record<string, TagsAndAccounts> = {
+    NOLA: {
+        tags: [
+            "nolalove",
+            "neworleans",
+            "neworleansphotography",
+            "nola",
+            "nolalife"
+        ],
+        accounts: [
+        ]
+    },
+}
+
+const Utah: Record<string, TagsAndAccounts> = {
     State: {
         tags: [
             "utah",
@@ -56,13 +74,15 @@ const Utah: { State: Value } = {
             "utahtravels",
             "utah",
         ],
-        accounts: []
+        accounts: [
+        ]
     },
 };
 
 const USA = {
     Arizona,
     Colorado,
+    Louisiana,
     Montana,
     Utah
 };

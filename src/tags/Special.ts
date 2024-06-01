@@ -1,13 +1,14 @@
-import { Value } from '../types'
+import { TagsAndAccounts } from '../types'
 
-const Special: Record<string, Value> = {
-  NatGeoYourShot: {
-    tags: [
-      "yourshotphotographer"
-    ],
-    accounts: []
-  },
+const NatGeoYourShot: TagsAndAccounts = {
+  tags: [
+    "yourshotphotographer"
+  ],
+  accounts: [
 
-}
+  ]
+};
 
-export default Special
+const Special = { NatGeoYourShot };
+
+export default Special;

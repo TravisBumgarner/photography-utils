@@ -1,17 +1,21 @@
-import { Value } from "../../types";
+import { TagsAndAccounts } from "../../types";
 
-const _USPark: Value = {
-    tags: [],
-    accounts: []
+const _USPark: TagsAndAccounts = {
+    tags: [
+    ],
+    accounts: [
+    ]
 }
 
-const _CanadaPark: Value = {
-    tags: [],
-    accounts: []
+const _CanadaPark: TagsAndAccounts = {
+    tags: [
+    ],
+    accounts: [
+    ]
 }
 
 
-const Arches: Value = {
+const Arches: TagsAndAccounts = {
     tags: [
         "archesnationalpark",
         "archesnps",
@@ -23,7 +27,7 @@ const Arches: Value = {
     ]
 };
 
-const Banff: Value = {
+const Banff: TagsAndAccounts = {
     tags: [
         "banff",
         "banffnationalpark",
@@ -38,7 +42,7 @@ const Banff: Value = {
     ]
 };
 
-const Glacier: Value = {
+const Glacier: TagsAndAccounts = {
     tags: [
         "glaciernationalpark",
         "glaciernps ",

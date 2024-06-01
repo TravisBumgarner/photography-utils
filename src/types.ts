@@ -1,6 +1,6 @@
 import { Array as ArrayRunType, Record, Static, String } from 'runtypes';
 
-export type Value = {
+export type TagsAndAccounts = {
   tags: string[],
   accounts: string[]
 }

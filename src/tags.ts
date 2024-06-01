@@ -1,5 +1,5 @@
 import TAGS from "./tags/index";
-import { Value } from "./types";
+import { TagsAndAccounts } from "./types";
 
 function lightroomTagToInstagramTags(hierarchyTagParts: string[], TAGS: any): { tags: string[], accounts: string[] } | null {
   if (hierarchyTagParts.length === 0) {
@@ -15,12 +15,12 @@ function lightroomTagToInstagramTags(hierarchyTagParts: string[], TAGS: any): { 
 }
 
 
-const lightroomTagsToInstragramTemplateString = (lightroomTags: string[]): { errors: string[] } | { templateString: string, tagsAndAccountsPreview: Record<string, Value> } => {
+const lightroomTagsToInstragramTemplateString = (lightroomTags: string[]): { errors: string[] } | { templateString: string, tagsAndAccountsPreview: Record<string, TagsAndAccounts> } => {
   const errors = []
 
   const instagramTags = []
   const instagramAccounts = []
-  const tagsAndAccountsPreview: Record<string, Value> = {}
+  const tagsAndAccountsPreview: Record<string, TagsAndAccounts> = {}
 
   for (let lightroomTag of lightroomTags) {
     if (!lightroomTag.includes('cameracoffeewander')) {
@@ -35,6 +35,11 @@ const lightroomTagsToInstragramTemplateString = (lightroomTags: string[]): { err
     const result = lightroomTagToInstagramTags(lightroomTagParts, TAGS);
     if (!result) {
       errors.push(`Unknown hierarchy tag: ${lightroomTag}`)
+      continue
+    }
+
+    if (result.tags.length === 0 && result.accounts.length === 0) {
+      errors.push(`No tags or accounts found for hierarchy tag: ${lightroomTag}`)
       continue
     }
 

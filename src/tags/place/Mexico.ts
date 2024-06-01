@@ -1,27 +1,31 @@
-import { Value } from "../../types";
+import { TagsAndAccounts } from "../../types";
 
-const Baja: Value = {
-    accounts: [],
-    tags: []
+const Baja: TagsAndAccounts = {
+    accounts: [
+    ],
+    tags: [
+    ]
 }
 
-const Country: Value = {
+const Country: TagsAndAccounts = {
     tags: [
         "mexico",
         "mexicomagico",
         "mexicotravel",
         "mexicolindo",
     ],
-    accounts: []
+    accounts: [
+    ]
 };
 
-const MexicoCity: Value = {
+const MexicoCity: TagsAndAccounts = {
     tags: [
         "cdmx",
         "mexicocity",
         "mexicodf",
     ],
-    accounts: []
+    accounts: [
+    ]
 };
 
 const Mexico = {

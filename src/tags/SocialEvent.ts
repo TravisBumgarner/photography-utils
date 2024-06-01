@@ -1,17 +1,18 @@
-import { Value } from "../types"
+import { TagsAndAccounts } from "../types"
 
-const DayOfTheDead: Value = {
+const DayOfTheDead: TagsAndAccounts = {
     tags: [
         "dayofthedead",
         "DiaDeMuertos",
         "DiaDeLosMuertos",
-        "ddlm ",
+        "ddlm",
         "marigolds",
     ],
-    accounts: []
+    accounts: [
+    ]
 };
 
-const MexicoCityFireworksFestival: Value = {
+const MexicoCityFireworksFestival: TagsAndAccounts = {
     tags: [
         "torostultepec",
         "pirotecniatultepec",
@@ -19,10 +20,21 @@ const MexicoCityFireworksFestival: Value = {
         "tultepeccapitaldelapirotécnia ",
         "fireworks",
     ],
-    accounts: []
+    accounts: [
+    ]
 };
 
-const SocialEvent = { DayOfTheDead, MexicoCityFireworksFestival };
+const PrideCelebration: TagsAndAccounts = {
+    tags: [
+        "pride",
+        "pridemonth",
+        "equality",
+    ],
+    accounts: [
+    ]
+};
+
+const SocialEvent = { DayOfTheDead, MexicoCityFireworksFestival, PrideCelebration };
 
 export { DayOfTheDead, MexicoCityFireworksFestival };
 export default SocialEvent;

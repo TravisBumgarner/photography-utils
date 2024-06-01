@@ -1,25 +1,29 @@
-import { Value } from '../types'
+import { TagsAndAccounts } from '../types'
 
-const Animals: Value = {
+const Animals: TagsAndAccounts = {
   tags: [
     "animalkingdom",
     "naturewanderers",
     "animallovers",
     "everything_animals",
   ],
-  accounts: []
+  accounts: [
+
+  ]
 };
 
-const Leaves: Value = {
+const Leaves: TagsAndAccounts = {
   tags: [
     "leafpeeping",
     "autumnleaes",
     "fallcolors",
   ],
-  accounts: []
+  accounts: [
+
+  ]
 };
 
-const BlackAndWhite: Value = {
+const BlackAndWhite: TagsAndAccounts = {
   tags: [
     "bnw",
     "bnwphotography",
@@ -27,10 +31,12 @@ const BlackAndWhite: Value = {
     "bnw_captures",
     "bnwphoto",
   ],
-  accounts: []
+  accounts: [
+
+  ]
 };
 
-const Clouds: Value = {
+const Clouds: TagsAndAccounts = {
   tags: [
     "clouds",
     "cloudscape",
@@ -38,26 +44,34 @@ const Clouds: Value = {
     "cloudphotography",
     "cloudlovers",
   ],
-  accounts: []
+  accounts: [
+
+  ]
 };
 
-const Portrait: Value = {
+const Portrait: TagsAndAccounts = {
   tags: [
-    "mundusmag"
+    "mundusmag",
+    "portraitphotography",
+    "portrait"
   ],
-  accounts: []
+  accounts: [
+
+  ]
 };
 
-const Stars: Value = {
+const Stars: TagsAndAccounts = {
   tags: [
     "astrophotography",
     "moonlovers",
     "astronomy",
   ],
-  accounts: []
+  accounts: [
+
+  ]
 };
 
-const Storms: Value = {
+const Storms: TagsAndAccounts = {
   tags: [
     "lightening",
     "stormphotography",
@@ -66,7 +80,9 @@ const Storms: Value = {
     "thunderstorms",
     "dpsp_rainshots"
   ],
-  accounts: []
+  accounts: [
+
+  ]
 };
 
 const Shadows = {
@@ -75,16 +91,20 @@ const Shadows = {
     "shadows",
     "shadowart",
   ],
-  accounts: []
+  accounts: [
+
+  ]
 }
 
-const Sunsets: Value = {
+const Sunsets: TagsAndAccounts = {
   tags: [
     "sunset",
     "sunsetlovers",
     "sunsets",
   ],
-  accounts: []
+  accounts: [
+
+  ]
 };
 
 const PhotoType = {
