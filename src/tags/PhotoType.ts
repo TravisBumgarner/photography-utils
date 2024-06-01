@@ -26,7 +26,7 @@ const Beach: TagsAndAccounts = {
 const Leaves: TagsAndAccounts = {
   tags: [
     "leafpeeping",
-    "autumnleaes",
+    "autumnleaves",
     "fallcolors",
   ],
   accounts: [
