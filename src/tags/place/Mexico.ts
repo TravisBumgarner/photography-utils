@@ -2,6 +2,9 @@ import { TagsAndAccounts } from "../../types";
 
 const Baja: TagsAndAccounts = {
     accounts: [
+        "lapaz",
+        "bajacalifornia",
+        "baja",
     ],
     tags: [
     ]

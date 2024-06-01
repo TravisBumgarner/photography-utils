@@ -12,6 +12,17 @@ const Animals: TagsAndAccounts = {
   ]
 };
 
+const Beach: TagsAndAccounts = {
+  tags: [
+    "beautifulbeaches",
+    "beach",
+    "beaches",
+  ],
+  accounts: [
+
+  ]
+};
+
 const Leaves: TagsAndAccounts = {
   tags: [
     "leafpeeping",
@@ -109,6 +120,7 @@ const Sunsets: TagsAndAccounts = {
 
 const PhotoType = {
   Animals,
+  Beach,
   BlackAndWhite,
   Clouds,
   Leaves,
