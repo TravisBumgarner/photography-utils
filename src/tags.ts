@@ -1,3 +1,4 @@
+import { error } from "console";
 import TAGS from "./tags/index";
 import { TagsAndAccounts } from "./types";
 
@@ -43,6 +44,9 @@ const lightroomTagsToInstragramTemplateString = (lightroomTags: string[]): { err
       continue
     }
 
+    if (result.tags.some(tag => tag.includes(' '))) errors.push(`Tag contains space: ${lightroomTag}`)
+    if (result.accounts.some(account => account.includes(' '))) errors.push(`Account contains space: ${lightroomTag}`)
+
     instagramTags.push(...result.tags);
     instagramAccounts.push(...result.accounts);
     tagsAndAccountsPreview[lightroomTag] = { tags: result.tags, accounts: result.accounts }
@@ -52,8 +56,8 @@ const lightroomTagsToInstragramTemplateString = (lightroomTags: string[]): { err
     return { errors }
   }
 
-  const parsedTags = instagramTags.map(tag => `#${tag.trim()}`)
-  const parsedAccounts = instagramAccounts.map(account => `@${account.trim()}`)
+  const parsedTags = instagramTags.map(tag => `#${tag}`)
+  const parsedAccounts = instagramAccounts.map(account => `@${account}`)
   const templateString = [...parsedAccounts, ...parsedTags].join(' ')
   if ("##" in instagramTags || "@@" in instagramTags || "#@" in instagramTags || "@#" in instagramTags) {
     return { errors: ["Invalid tag or account name with ##, @@, #@, or @#"] }
