@@ -8,17 +8,33 @@ const main = async (directoryPath: string) => {
 
   const errorsByFile: Record<string, string[]> = {}
 
+  try {
+    const files = fs.readdirSync(directoryPath);
+
+    files.forEach(file => {
+      if (path.extname(file) === '.txt') {
+        try {
+          fs.unlinkSync(path.join(directoryPath, file));
+          console.log(`Deleted file: ${file}`);
+        } catch (err) {
+          console.log(`Error deleting file: ${file}`);
+        }
+      }
+    });
+  } catch (err) {
+    console.log('Unable to scan directory: ' + err);
+  }
+
   let templates = "";
 
-  fs.readdir(directoryPath, async (err, files) => {
-    if (err) {
-      return console.log('Unable to scan directory: ' + err);
-    }
+  try {
+    const files = fs.readdirSync(directoryPath);
 
     console.log('Gathering tags...')
     for (const file of files) {
       const filePath = path.join(directoryPath, file);
       console.log('\t', filePath)
+
       const metadata = await processPhoto(filePath);
 
       if ('errors' in metadata) {
@@ -26,13 +42,18 @@ const main = async (directoryPath: string) => {
         continue;
       }
 
-      const accountsAndTags = await lightroomTagsToInstragramTemplateString(metadata.tags);
+      const accountsAndTags = lightroomTagsToInstragramTemplateString(metadata.tags);
       if ('errors' in accountsAndTags) {
         errorsByFile[file] = accountsAndTags.errors;
         continue;
       }
 
-      templates += createTemplate({ metadata, accountsAndTagsTemplateString: accountsAndTags.templateString, tagsAndAccountsPreview: accountsAndTags.tagsAndAccountsPreview });
+      const template = createTemplate({ metadata, accountsAndTagsTemplateString: accountsAndTags.templateString, tagsAndAccountsPreview: accountsAndTags.tagsAndAccountsPreview });
+
+      const fileNameWithoutExt = path.parse(file).name;
+      fs.writeFileSync(path.join(directoryPath, fileNameWithoutExt + '.txt'), template);
+
+      templates += template;
       templates += '\n\n\n\n\n\n\n\n\n\n';
     }
 
@@ -42,7 +63,9 @@ const main = async (directoryPath: string) => {
     } else {
       console.log(templates);
     }
-  });
+  } catch (err) {
+    console.log('Unable to scan directory: ' + err);
+  }
 }
 
 main('C:\\Users\\Travi\\Desktop\\cameracoffeewander_template_ingest');
