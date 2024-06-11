@@ -1,82 +1,58 @@
-import { TagsAndAccounts } from "../../types";
+import { TagOrAccount } from "../../types";
 
-const Arizona: { State: TagsAndAccounts, ApacheJunction: TagsAndAccounts } = {
-    State: {
-        tags: [
-            "arizona",
-            "az",
-        ],
-        accounts: [
-        ]
-    },
-    ApacheJunction: {
-        tags: [
-            "myphx",
-            "cactus",
-            "cactuslover",
-            "cactusgram",
-            "apachejunction",
-            "phoenix",
-        ],
-        accounts: [
-        ]
-    },
+const Arizona: { State: TagOrAccount[], ApacheJunction: TagOrAccount[] } = {
+    State: [
+        "#arizona",
+        "#az",
+    ],
+    ApacheJunction: [
+        "#myphx",
+        "#cactus",
+        "#cactuslover",
+        "#cactusgram",
+        "#apachejunction",
+        "#phoenix",
+    ],
 };
 
-const Colorado: Record<string, TagsAndAccounts> = {
-    State: {
-        tags: [
-            "colorado",
-            "coloradophotographer",
-            "coloradophotography",
-            "coloradolove",
-        ],
-        accounts: [
-        ]
-    },
+const Colorado: Record<string, TagOrAccount[]> = {
+    State: [
+        "#colorado",
+        "#coloradophotographer",
+        "#coloradophotography",
+        "#coloradolove",
+    ],
 };
 
-const Montana: Record<string, TagsAndAccounts> = {
-    State: {
-        tags: [
-            "montana",
-            "montanacolors",
-            "montanalife",
-            "montanaliving",
-            "montanaphotographer",
-        ],
-        accounts: [
-        ]
-    },
+const Montana: Record<string, TagOrAccount[]> = {
+    State: [
+        "#montana",
+        "#montanacolors",
+        "#montanalife",
+        "#montanaliving",
+        "#montanaphotographer",
+    ],
 };
 
-const Louisiana: Record<string, TagsAndAccounts> = {
-    NOLA: {
-        tags: [
-            "nolalove",
-            "neworleans",
-            "neworleansphotography",
-            "nola",
-            "nolalife"
-        ],
-        accounts: [
-        ]
-    },
+const Louisiana: Record<string, TagOrAccount[]> = {
+    NOLA: [
+        "#nolalove",
+        "#neworleans",
+        "#neworleansphotography",
+        "#nola",
+        "#nolalife"
+    ],
 }
 
-const Utah: Record<string, TagsAndAccounts> = {
-    State: {
-        tags: [
-            "utah",
-            "utahphotographer",
-            "utahphotography",
-            "utahisbeautiful",
-            "utahtravels",
-            "utah",
-        ],
-        accounts: [
-        ]
-    },
+const Utah: Record<string, TagOrAccount[]> = {
+    State: [
+        "#utah",
+        "#utahphotographer",
+        "#utahphotography",
+        "#utahisbeautiful",
+        "#utahtravels",
+        "#utah",
+    ],
 };
 
 const USA = {

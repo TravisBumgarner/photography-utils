@@ -1,137 +1,83 @@
-import { TagsAndAccounts } from '../types'
+import { TagOrAccount } from '../types'
 
-const Animals: TagsAndAccounts = {
-  tags: [
-    "animalkingdom",
-    "naturewanderers",
-    "animallovers",
-    "everything_animals",
-  ],
-  accounts: [
+const Animals: TagOrAccount[] = [
+  "#animalkingdom",
+  "#naturewanderers",
+  "#animallovers",
+  "#everything_animals",
+]
 
-  ]
-};
+const Beach: TagOrAccount[] = [
+  "#beautifulbeaches",
+  "#beach",
+  "#beaches",
+]
 
-const Beach: TagsAndAccounts = {
-  tags: [
-    "beautifulbeaches",
-    "beach",
-    "beaches",
-  ],
-  accounts: [
+const Leaves: TagOrAccount[] = [
+  "#leafpeeping",
+  "#autumnleaves",
+  "#fallcolors",
+]
 
-  ]
-};
+const BlackAndWhite: TagOrAccount[] = [
+  "#bnw",
+  "#bnwphotography",
+  "#bnwmood",
+  "#bnw_captures",
+  "#bnwphoto",
+]
 
-const Leaves: TagsAndAccounts = {
-  tags: [
-    "leafpeeping",
-    "autumnleaves",
-    "fallcolors",
-  ],
-  accounts: [
+const Clouds: TagOrAccount[] = [
+  "#clouds",
+  "#cloudscape",
+  "#cloudchaser",
+  "#cloudphotography",
+  "#cloudlovers",
+]
 
-  ]
-};
+const Portrait: TagOrAccount[] = [
+  "#mundusmag",
+  "#portraitphotography",
+  "#portrait"
+]
 
-const BlackAndWhite: TagsAndAccounts = {
-  tags: [
-    "bnw",
-    "bnwphotography",
-    "bnwmood",
-    "bnw_captures",
-    "bnwphoto",
-  ],
-  accounts: [
+const Shadows = [
+  "#shadows_magazine",
+  "#shadows",
+  "#shadowart",
+]
 
-  ]
-};
+const Stars: TagOrAccount[] = [
+  "#astrophotography",
+  "#moonlovers",
+  "#astronomy",
+]
 
-const Clouds: TagsAndAccounts = {
-  tags: [
-    "clouds",
-    "cloudscape",
-    "cloudchaser",
-    "cloudphotography",
-    "cloudlovers",
-  ],
-  accounts: [
+const Storms: TagOrAccount[] = [
+  "#lightening",
+  "#stormphotography",
+  "#stormchasers",
+  "#stormclouds",
+  "#thunderstorms",
+  "#dpsp_rainshots"
+]
 
-  ]
-};
+const Street: TagOrAccount[] = [
+  "#street_perfection",
+  "#streetphotography",
+  "#street",
+  "#streetphotographers",
+  "#streetclassics",
+  "#streetdreamsmag",
+  "#streetphotographer"
+]
 
-const Portrait: TagsAndAccounts = {
-  tags: [
-    "mundusmag",
-    "portraitphotography",
-    "portrait"
-  ],
-  accounts: [
+const Sunsets: TagOrAccount[] = [
+  "#sunset",
+  "#sunsetlovers",
+  "#sunsets",
 
-  ]
-};
-
-const Shadows = {
-  tags: [
-    "shadows_magazine",
-    "shadows",
-    "shadowart",
-  ],
-  accounts: [
-
-  ]
-}
-
-const Stars: TagsAndAccounts = {
-  tags: [
-    "astrophotography",
-    "moonlovers",
-    "astronomy",
-  ],
-  accounts: [
-
-  ]
-};
-
-const Storms: TagsAndAccounts = {
-  tags: [
-    "lightening",
-    "stormphotography",
-    "stormchasers",
-    "stormclouds",
-    "thunderstorms",
-    "dpsp_rainshots"
-  ],
-  accounts: [
-
-  ]
-};
-
-const Street: TagsAndAccounts = {
-  tags: [
-    "street_perfection",
-    "streetphotography",
-    "street",
-    "streetphotographers",
-    "streetclassics",
-    "streetdreamsmag",
-    "streetphotographer"
-  ],
-  accounts: [
-
-  ]
-};
-
-const Sunsets: TagsAndAccounts = {
-  tags: [
-    "sunset",
-    "sunsetlovers",
-    "sunsets",
-  ],
-  accounts: [
-
-  ]
-};
+]
 
 const PhotoType = {
   Animals,

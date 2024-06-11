@@ -1,16 +1,12 @@
-import { TagsAndAccounts } from "../../types";
+import { TagOrAccount } from "../../types";
 
-const Iceland: Record<string, TagsAndAccounts> = {
-    Country: {
-        tags: [
-            "iceland",
-            "icelandtravel",
-            "icelandtrip",
-            "icelandnature"
-        ],
-        accounts: [
-        ]
-    }
+const Iceland: Record<string, TagOrAccount[]> = {
+    Country: [
+        "#iceland",
+        "#icelandtravel",
+        "#icelandtrip",
+        "#icelandnature"
+    ]
 };
 
 const OtherCountries = {

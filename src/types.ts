@@ -1,9 +1,10 @@
 import { Array as ArrayRunType, Record, Static, String } from 'runtypes';
 
-export type TagsAndAccounts = {
-  tags: string[],
-  accounts: string[]
-}
+type Tag = `#${string}`
+type Account = `@${string}`
+
+
+export type TagOrAccount = (Tag | Account)
 
 export enum SupportedCameras {
   iPhone13 = 'Apple - iPhone 13 mini',
