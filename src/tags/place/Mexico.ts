@@ -2,9 +2,9 @@ import { TagsAndAccounts } from "../../types";
 
 const Baja: TagsAndAccounts = {
     tags: [
-        "lapaz",
-        "bajacalifornia",
-        "baja",
+        "#lapaz",
+        "#bajacalifornia",
+        "#baja",
     ],
     accounts: [
     ]
@@ -12,10 +12,10 @@ const Baja: TagsAndAccounts = {
 
 const Country: TagsAndAccounts = {
     tags: [
-        "mexico",
-        "mexicomagico",
-        "mexicotravel",
-        "mexicolindo",
+        "#mexico",
+        "#mexicomagico",
+        "#mexicotravel",
+        "#mexicolindo",
     ],
     accounts: [
     ]
@@ -23,9 +23,9 @@ const Country: TagsAndAccounts = {
 
 const MexicoCity: TagsAndAccounts = {
     tags: [
-        "cdmx",
-        "mexicocity",
-        "mexicodf",
+        "#cdmx",
+        "#mexicocity",
+        "#mexicodf",
     ],
     accounts: [
     ]

@@ -3,10 +3,10 @@ import { TagsAndAccounts } from "../../types";
 const Iceland: Record<string, TagsAndAccounts> = {
     Country: {
         tags: [
-            "iceland",
-            "icelandtravel",
-            "icelandtrip",
-            "icelandnature"
+            "#iceland",
+            "#icelandtravel",
+            "#icelandtrip",
+            "#icelandnature"
         ],
         accounts: [
         ]

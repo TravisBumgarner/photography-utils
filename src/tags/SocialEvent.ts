@@ -2,11 +2,11 @@ import { TagsAndAccounts } from "../types"
 
 const DayOfTheDead: TagsAndAccounts = {
     tags: [
-        "dayofthedead",
-        "DiaDeMuertos",
-        "DiaDeLosMuertos",
-        "ddlm",
-        "marigolds",
+        "#dayofthedead",
+        "#DiaDeMuertos",
+        "#DiaDeLosMuertos",
+        "#ddlm",
+        "#marigolds",
     ],
     accounts: [
     ]
@@ -14,11 +14,11 @@ const DayOfTheDead: TagsAndAccounts = {
 
 const MexicoCityFireworksFestival: TagsAndAccounts = {
     tags: [
-        "torostultepec",
-        "pirotecniatultepec",
-        "tultepec",
-        "tultepeccapitaldelapirotécnia ",
-        "fireworks",
+        "#torostultepec",
+        "#pirotecniatultepec",
+        "#tultepec",
+        "#tultepeccapitaldelapirotécnia ",
+        "#fireworks",
     ],
     accounts: [
     ]
@@ -26,9 +26,9 @@ const MexicoCityFireworksFestival: TagsAndAccounts = {
 
 const PrideCelebration: TagsAndAccounts = {
     tags: [
-        "pride",
-        "pridemonth",
-        "equality",
+        "#pride",
+        "#pridemonth",
+        "#equality",
     ],
     accounts: [
     ]

@@ -17,26 +17,26 @@ const _CanadaPark: TagsAndAccounts = {
 
 const Arches: TagsAndAccounts = {
     tags: [
-        "archesnationalpark",
-        "archesnps",
+        "#archesnationalpark",
+        "#archesnps",
         ..._USPark.tags
     ],
     accounts: [
-        "archesnps",
+        "@archesnps",
         ..._USPark.accounts
     ]
 };
 
 const Banff: TagsAndAccounts = {
     tags: [
-        "banff",
-        "banffnationalpark",
-        "banffcanada",
-        "banffalberta ",
+        "#banff",
+        "#banffnationalpark",
+        "#banffcanada",
+        "#banffalberta ",
         ..._CanadaPark.tags
     ],
     accounts: [
-        "banff.national.park",
+        "@banff.national.park",
         ..._CanadaPark.accounts
 
     ]
@@ -44,12 +44,12 @@ const Banff: TagsAndAccounts = {
 
 const Glacier: TagsAndAccounts = {
     tags: [
-        "glaciernationalpark",
-        "glaciernps ",
+        "#glaciernationalpark",
+        "#glaciernps ",
         ..._USPark.tags
     ],
     accounts: [
-        "glaciernps",
+        "@glaciernps",
         ..._USPark.accounts
     ]
 };

@@ -2,7 +2,7 @@ import { TagsAndAccounts } from '../types'
 
 const Portra400: TagsAndAccounts = {
     tags: [
-        "portra400"
+        "#portra400"
     ],
     accounts: [
     ]

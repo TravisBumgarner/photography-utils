@@ -2,10 +2,10 @@ import { TagsAndAccounts } from '../types'
 
 const Animals: TagsAndAccounts = {
   tags: [
-    "animalkingdom",
-    "naturewanderers",
-    "animallovers",
-    "everything_animals",
+    "#animalkingdom",
+    "#naturewanderers",
+    "#animallovers",
+    "#everything_animals",
   ],
   accounts: [
 
@@ -14,9 +14,9 @@ const Animals: TagsAndAccounts = {
 
 const Beach: TagsAndAccounts = {
   tags: [
-    "beautifulbeaches",
-    "beach",
-    "beaches",
+    "#beautifulbeaches",
+    "#beach",
+    "#beaches",
   ],
   accounts: [
 
@@ -25,9 +25,9 @@ const Beach: TagsAndAccounts = {
 
 const Leaves: TagsAndAccounts = {
   tags: [
-    "leafpeeping",
-    "autumnleaves",
-    "fallcolors",
+    "#leafpeeping",
+    "#autumnleaves",
+    "#fallcolors",
   ],
   accounts: [
 
@@ -36,11 +36,11 @@ const Leaves: TagsAndAccounts = {
 
 const BlackAndWhite: TagsAndAccounts = {
   tags: [
-    "bnw",
-    "bnwphotography",
-    "bnwmood",
-    "bnw_captures",
-    "bnwphoto",
+    "#bnw",
+    "#bnwphotography",
+    "#bnwmood",
+    "#bnw_captures",
+    "#bnwphoto",
   ],
   accounts: [
 
@@ -49,11 +49,11 @@ const BlackAndWhite: TagsAndAccounts = {
 
 const Clouds: TagsAndAccounts = {
   tags: [
-    "clouds",
-    "cloudscape",
-    "cloudchaser",
-    "cloudphotography",
-    "cloudlovers",
+    "#clouds",
+    "#cloudscape",
+    "#cloudchaser",
+    "#cloudphotography",
+    "#cloudlovers",
   ],
   accounts: [
 
@@ -62,9 +62,9 @@ const Clouds: TagsAndAccounts = {
 
 const Portrait: TagsAndAccounts = {
   tags: [
-    "mundusmag",
-    "portraitphotography",
-    "portrait"
+    "#mundusmag",
+    "#portraitphotography",
+    "#portrait"
   ],
   accounts: [
 
@@ -73,9 +73,9 @@ const Portrait: TagsAndAccounts = {
 
 const Shadows = {
   tags: [
-    "shadows_magazine",
-    "shadows",
-    "shadowart",
+    "#shadows_magazine",
+    "#shadows",
+    "#shadowart",
   ],
   accounts: [
 
@@ -84,9 +84,9 @@ const Shadows = {
 
 const Stars: TagsAndAccounts = {
   tags: [
-    "astrophotography",
-    "moonlovers",
-    "astronomy",
+    "#astrophotography",
+    "#moonlovers",
+    "#astronomy",
   ],
   accounts: [
 
@@ -95,12 +95,12 @@ const Stars: TagsAndAccounts = {
 
 const Storms: TagsAndAccounts = {
   tags: [
-    "lightening",
-    "stormphotography",
-    "stormchasers",
-    "stormclouds",
-    "thunderstorms",
-    "dpsp_rainshots"
+    "#lightening",
+    "#stormphotography",
+    "#stormchasers",
+    "#stormclouds",
+    "#thunderstorms",
+    "#dpsp_rainshots"
   ],
   accounts: [
 
@@ -109,13 +109,13 @@ const Storms: TagsAndAccounts = {
 
 const Street: TagsAndAccounts = {
   tags: [
-    "street_perfection",
-    "streetphotography",
-    "street",
-    "streetphotographers",
-    "streetclassics",
-    "streetdreamsmag",
-    "streetphotographer"
+    "#street_perfection",
+    "#streetphotography",
+    "#street",
+    "#streetphotographers",
+    "#streetclassics",
+    "#streetdreamsmag",
+    "#streetphotographer"
   ],
   accounts: [
 
@@ -124,9 +124,9 @@ const Street: TagsAndAccounts = {
 
 const Sunsets: TagsAndAccounts = {
   tags: [
-    "sunset",
-    "sunsetlovers",
-    "sunsets",
+    "#sunset",
+    "#sunsetlovers",
+    "#sunsets",
   ],
   accounts: [
 

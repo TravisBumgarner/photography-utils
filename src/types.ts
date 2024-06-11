@@ -1,8 +1,12 @@
 import { Array as ArrayRunType, Record, Static, String } from 'runtypes';
 
+type Tag = `#${string}`
+type Account = `@${string}`
+
+
 export type TagsAndAccounts = {
-  tags: string[],
-  accounts: string[]
+  tags: Tag[],
+  accounts: Account[]
 }
 
 export enum SupportedCameras {

@@ -2,7 +2,7 @@ import { TagsAndAccounts } from '../types'
 
 const NatGeoYourShot: TagsAndAccounts = {
   tags: [
-    "yourshotphotographer"
+    "#yourshotphotographer"
   ],
   accounts: [
 
