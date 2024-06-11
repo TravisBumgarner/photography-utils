@@ -3,15 +3,12 @@ import TAGS from "./tags/index";
 import { TagOrAccount } from "./types";
 
 function lightroomTagToInstagramTags(hierarchyTagParts: string[], TAGS: any): TagOrAccount[] | null {
-  console.log('tags', hierarchyTagParts, TAGS)
   if (hierarchyTagParts.length === 0) {
-    console.log('returninggg', TAGS)
     return TAGS ? TAGS : null;
   }
 
   const [first, ...rest] = hierarchyTagParts;
   if (!TAGS[first]) {
-    console.log('returninggg', null)
     return null;
   }
 
@@ -35,7 +32,6 @@ const lightroomTagsToInstragramTemplateString = (lightroomTags: string[]): { err
     const lightroomTagParts = [...lightroomTag.split('|')];
 
     const result = lightroomTagToInstagramTags(lightroomTagParts, TAGS);
-    console.log("succcesss????", lightroomTag, result)
     if (!result) {
       errors.push(`Unknown hierarchy tag: ${lightroomTag}`)
       continue
