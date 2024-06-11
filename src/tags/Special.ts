@@ -1,13 +1,8 @@
-import { TagsAndAccounts } from '../types'
+import { TagOrAccount } from '../types'
 
-const NatGeoYourShot: TagsAndAccounts = {
-  tags: [
-    "#yourshotphotographer"
-  ],
-  accounts: [
-
-  ]
-};
+const NatGeoYourShot: TagOrAccount[] = [
+  "#yourshotphotographer"
+]
 
 const Special = { NatGeoYourShot };
 

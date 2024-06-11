@@ -1,38 +1,26 @@
-import { TagsAndAccounts } from "../types"
+import { TagOrAccount } from "../types"
 
-const DayOfTheDead: TagsAndAccounts = {
-    tags: [
-        "#dayofthedead",
-        "#DiaDeMuertos",
-        "#DiaDeLosMuertos",
-        "#ddlm",
-        "#marigolds",
-    ],
-    accounts: [
-    ]
-};
+const DayOfTheDead: TagOrAccount[] = [
+    "#dayofthedead",
+    "#DiaDeMuertos",
+    "#DiaDeLosMuertos",
+    "#ddlm",
+    "#marigolds",
+]
 
-const MexicoCityFireworksFestival: TagsAndAccounts = {
-    tags: [
-        "#torostultepec",
-        "#pirotecniatultepec",
-        "#tultepec",
-        "#tultepeccapitaldelapirotécnia ",
-        "#fireworks",
-    ],
-    accounts: [
-    ]
-};
+const MexicoCityFireworksFestival: TagOrAccount[] = [
+    "#torostultepec",
+    "#pirotecniatultepec",
+    "#tultepec",
+    "#tultepeccapitaldelapirotécnia",
+    "#fireworks",
+]
 
-const PrideCelebration: TagsAndAccounts = {
-    tags: [
-        "#pride",
-        "#pridemonth",
-        "#equality",
-    ],
-    accounts: [
-    ]
-};
+const PrideCelebration: TagOrAccount[] = [
+    "#pride",
+    "#pridemonth",
+    "#equality",
+]
 
 const SocialEvent = { DayOfTheDead, MexicoCityFireworksFestival, PrideCelebration };
 

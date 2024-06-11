@@ -1,35 +1,23 @@
-import { TagsAndAccounts } from "../../types";
+import { TagOrAccount } from "../../types";
 
-const Baja: TagsAndAccounts = {
-    tags: [
-        "#lapaz",
-        "#bajacalifornia",
-        "#baja",
-    ],
-    accounts: [
-    ]
-}
+const Baja: TagOrAccount[] = [
+    "#lapaz",
+    "#bajacalifornia",
+    "#baja",
+]
 
-const Country: TagsAndAccounts = {
-    tags: [
-        "#mexico",
-        "#mexicomagico",
-        "#mexicotravel",
-        "#mexicolindo",
-    ],
-    accounts: [
-    ]
-};
+const Country: TagOrAccount[] = [
+    "#mexico",
+    "#mexicomagico",
+    "#mexicotravel",
+    "#mexicolindo",
+];
 
-const MexicoCity: TagsAndAccounts = {
-    tags: [
-        "#cdmx",
-        "#mexicocity",
-        "#mexicodf",
-    ],
-    accounts: [
-    ]
-};
+const MexicoCity: TagOrAccount[] = [
+    "#cdmx",
+    "#mexicocity",
+    "#mexicodf",
+];
 
 const Mexico = {
     Baja,

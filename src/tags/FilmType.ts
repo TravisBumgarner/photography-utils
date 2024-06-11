@@ -1,12 +1,8 @@
-import { TagsAndAccounts } from '../types'
+import { TagOrAccount } from '../types'
 
-const Portra400: TagsAndAccounts = {
-    tags: [
-        "#portra400"
-    ],
-    accounts: [
-    ]
-};
+const Portra400: TagOrAccount[] = [
+    "#portra400"
+]
 
 const FilmType = {
     Portra400

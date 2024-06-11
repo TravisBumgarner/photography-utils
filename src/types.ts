@@ -4,10 +4,7 @@ type Tag = `#${string}`
 type Account = `@${string}`
 
 
-export type TagsAndAccounts = {
-  tags: Tag[],
-  accounts: Account[]
-}
+export type TagOrAccount = (Tag | Account)
 
 export enum SupportedCameras {
   iPhone13 = 'Apple - iPhone 13 mini',

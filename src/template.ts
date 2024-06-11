@@ -1,11 +1,11 @@
-import { Metadata, TagsAndAccounts } from "./types"
+import { Metadata, TagOrAccount } from "./types"
 
-const createTemplate = ({ metadata, accountsAndTagsTemplateString, tagsAndAccountsPreview }: { metadata: Metadata, accountsAndTagsTemplateString: string, tagsAndAccountsPreview: Record<string, TagsAndAccounts> }) => {
+const createTemplate = ({ metadata, accountsAndTagsTemplateString, tagsAndAccountsPreview }: { metadata: Metadata, accountsAndTagsTemplateString: string, tagsAndAccountsPreview: Record<string, TagOrAccount[]> }) => {
   let output = ''
 
   output += '\n\n\n------PREVIEW-----\n'
-  for (let [tag, { tags, accounts }] of Object.entries(tagsAndAccountsPreview)) {
-    output += `${tag} - ${[...tags.map(t => `#${t}`), ...accounts.map(a => `#${a}`)].join(', ')}\n`
+  for (let [tag, tags] of Object.entries(tagsAndAccountsPreview)) {
+    output += `${tag} - ${tags.join(', ')}\n`
   }
   output += '------END PREVIEW-----\n'
 

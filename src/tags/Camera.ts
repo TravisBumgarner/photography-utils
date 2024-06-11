@@ -1,151 +1,83 @@
-import { TagsAndAccounts } from "../types"
+import { TagOrAccount } from "../types"
 
-const _FilmPhotography: TagsAndAccounts = {
-  tags: [
-    "#filmphotography",
-    "#filmisnotdead",
-    "#analogphotography",
-  ],
-  accounts: [
+const _FilmPhotography: TagOrAccount[] = [
+  "#filmphotography",
+  "#filmisnotdead",
+  "#analogphotography",
+]
 
-  ]
-}
+const _35mmFilmPhotography: TagOrAccount[] = [
+  ..._FilmPhotography,
+  "#35mm",
+  "#thedaily35mm",
+  "#35mmfilm",
+]
 
-const _35mmFilmPhotography: TagsAndAccounts = {
-  tags: [
-    ..._FilmPhotography.tags,
-    "#35mm",
-    "#thedaily35mm",
-    "#35mmfilm",
-  ],
-  accounts: [
-    ..._FilmPhotography.accounts
-  ]
-}
+const _120mmFilmPhotography: TagOrAccount[] = [
+  ..._FilmPhotography,
+  "#120",
+  "#120film",
+]
 
-const _120mmFilmPhotography: TagsAndAccounts = {
-  tags: [
-    ..._FilmPhotography.tags,
-    "#120",
-    "#120film",
-  ],
-  accounts: [
-    ..._FilmPhotography.accounts
-  ]
-}
+const _iPhonePhotography: TagOrAccount[] = [
+  "#iphonephotography",
+  "#shotoniphone",
+  "#mobilephotography"
 
-const _iPhonePhotography: TagsAndAccounts = {
-  tags: [
-    "#iphonephotography",
-    "#shotoniphone",
-    "#mobilephotography"
-  ],
-  accounts: [
+]
 
-  ]
-}
+const NikonZ5: TagOrAccount[] = [
+  "#nikon",
+  "#nikonz5",
+  "#nikonphotography",
+  "#nikonphotographer",
+]
 
-const NikonZ5: TagsAndAccounts = {
-  tags: [
-    "#nikon",
-    "#nikonz5",
-    "#nikonphotography",
-    "#nikonphotographer",
-  ],
-  accounts: [
+const NikonSLR: TagOrAccount[] = [
+  ..._FilmPhotography,
+  ..._35mmFilmPhotography,
+  "#nikon",
+  "#nikonphotography"
+]
 
-  ]
-};
+const NikonD5300: TagOrAccount[] = [
+  "#nikon",
+  "#nikond5300",
+  "#nikonphotography",
+  "#nikonphotographer",
+]
 
-const NikonSLR: TagsAndAccounts = {
-  tags: [
-    ..._FilmPhotography.tags,
-    ..._35mmFilmPhotography.tags,
-    "#nikon",
-    "#nikonphotography"
+const Pixel3: TagOrAccount[] = [
+  "#shotonpixel",
+  "#pixel3",
+  "#googlepixel3",
+  "#googlepixel",
+  "#pixelartist"
+]
 
-  ],
-  accounts: [
-    ..._FilmPhotography.accounts,
-    ..._35mmFilmPhotography.accounts
-  ]
-}
+const iPhone13: TagOrAccount[] = [
+  ..._iPhonePhotography,
+  "#iphone13",
+]
 
-const NikonD5300: TagsAndAccounts = {
-  tags: [
-    "#nikon",
-    "#nikond5300",
-    "#nikonphotography",
-    "#nikonphotographer",
-  ],
-  accounts: [
+const iPhone15: TagOrAccount[] = [
+  ..._iPhonePhotography,
+  "#iphone15"
+]
 
-  ]
-};
+const YashicaC: TagOrAccount[] = [
+  ..._120mmFilmPhotography,
+  "#yashicac",
+  "#yashica",
+]
 
-const Pixel3: TagsAndAccounts = {
-  tags: [
-    "#shotonpixel",
-    "#pixel3",
-    "#googlepixel3",
-    "#googlepixel",
-    "#pixelartist"
-  ],
-  accounts: [
+const DJIMini3Pro: TagOrAccount[] = [
+]
 
-  ]
-};
-
-const iPhone13: TagsAndAccounts = {
-  tags: [
-    ..._iPhonePhotography.tags,
-    "#iphone13",
-  ],
-  accounts: [
-    ..._iPhonePhotography.accounts
-  ]
-};
-
-const iPhone15: TagsAndAccounts = {
-  tags: [
-    ..._iPhonePhotography.tags,
-    "#iphone15"
-  ],
-  accounts: [
-    ..._iPhonePhotography.accounts
-  ]
-};
-
-const YashicaC: TagsAndAccounts = {
-  tags: [
-    ..._120mmFilmPhotography.tags,
-    "#yashicac",
-    "#yashica",
-  ],
-  accounts: [
-    ..._120mmFilmPhotography.accounts
-  ]
-};
-
-const DJIMini3Pro: TagsAndAccounts = {
-  tags: [
-
-  ],
-  accounts: [
-
-  ]
-};
-
-const UnknownFilmCamera: TagsAndAccounts = {
-  tags: [
-    ..._FilmPhotography.tags,
-    ..._35mmFilmPhotography.tags,
-  ],
-  accounts: [
-    ..._FilmPhotography.accounts,
-    ..._35mmFilmPhotography.accounts
-  ]
-};
+const UnknownFilmCamera: TagOrAccount[] = [
+  ..._FilmPhotography,
+  ..._35mmFilmPhotography,
+]
 
 const Camera = {
   DJIMini3Pro,
@@ -157,6 +89,5 @@ const Camera = {
   Pixel3,
   YashicaC,
   UnknownFilmCamera
-};
-
+}
 export default Camera;
