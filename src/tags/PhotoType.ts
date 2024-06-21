@@ -35,6 +35,19 @@ const Clouds: TagOrAccount[] = [
   "#cloudlovers",
 ]
 
+const Flowers: TagOrAccount[] = [
+  "#flowers",
+  "#flowerslovers",
+  "#flowersphotography",
+  "#flowersmakemehappy"
+]
+
+const Landscape: TagOrAccount[] = [
+  "#landscapephotography",
+  "#landscape_collection",
+  "#landscapelover"
+]
+
 const Portrait: TagOrAccount[] = [
   "#mundusmag",
   "#portraitphotography",
@@ -51,6 +64,10 @@ const Stars: TagOrAccount[] = [
   "#astrophotography",
   "#moonlovers",
   "#astronomy",
+  "#nightshooters",
+  "#nightimages",
+  "@milkyway_nightscape",
+  "#milkyway_nightscape_"
 ]
 
 const Storms: TagOrAccount[] = [
@@ -84,6 +101,8 @@ const PhotoType = {
   Beach,
   BlackAndWhite,
   Clouds,
+  Flowers,
+  Landscape,
   Leaves,
   Portrait,
   Stars,

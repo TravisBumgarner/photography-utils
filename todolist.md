@@ -1,4 +1,5 @@
 Photos to Go Through
+- [x] Move maker photos elsewhere
 - [ ]  2024-05
 - [ ]  2024-04
 - [ ]  2024-03

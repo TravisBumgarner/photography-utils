@@ -4,6 +4,8 @@ const _FilmPhotography: TagOrAccount[] = [
   "#filmphotography",
   "#filmisnotdead",
   "#analogphotography",
+  "#analogsunrise",
+  "@analogsunrise"
 ]
 
 const _35mmFilmPhotography: TagOrAccount[] = [
@@ -72,6 +74,11 @@ const YashicaC: TagOrAccount[] = [
 ]
 
 const DJIMini3Pro: TagOrAccount[] = [
+  "#dji",
+  "#djiphotography",
+  "#djidrone",
+  "#djicreator",
+  "#djimini3pro"
 ]
 
 const UnknownFilmCamera: TagOrAccount[] = [
