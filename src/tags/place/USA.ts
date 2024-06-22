@@ -55,12 +55,24 @@ const Utah: Record<string, TagOrAccount[]> = {
     ],
 };
 
+const Vermont: Record<string, TagOrAccount[]> = {
+    State: [
+        '@vermonttourism',
+        "#vermont",
+        "#newenglandphotography",
+        "#thisisvermont",
+        "#vermontlife",
+        "#vermontshots"
+    ],
+};
+
 const USA = {
     Arizona,
     Colorado,
     Louisiana,
     Montana,
-    Utah
+    Utah,
+    Vermont
 };
 
 export default USA;
