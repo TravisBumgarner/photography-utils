@@ -54,6 +54,12 @@ const Portrait: TagOrAccount[] = [
   "#portrait"
 ]
 
+const Selfie: TagOrAccount[] = [
+  "#selfie",
+  '#photographicselfportrait',
+  "#artisticselfie",
+]
+
 const Shadows = [
   "#shadows_magazine",
   "#shadows",
@@ -105,6 +111,7 @@ const PhotoType = {
   Landscape,
   Leaves,
   Portrait,
+  Selfie,
   Stars,
   Shadows,
   Storms,
