@@ -8,10 +8,10 @@
         - Then `FilmType`
         - Then the rest of the tags on a per photo basis.
     - Title and describe photos.
-        - Descriptions are optional. Try and add a `Photography Tip` where possible (and include the tags). 
+        - Descriptions are optional. Try and add a `Photography Tip: ...` where possible (and include the tags). 
         - Write descriptions and use ChatGPT to proofread.
 4. Export photos
-    - Run this script (`yarn main`)
+    - Run this script (`yarn start`)
     - Open Buffer
     - Queue each photo
         - Spellcheck each template
