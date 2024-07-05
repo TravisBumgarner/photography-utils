@@ -1,23 +1,19 @@
-import { TagOrAccount } from "../../types";
+import { Tags } from '../../types'
 
-const Baja: TagOrAccount[] = [
-    "#lapaz",
-    "#bajacalifornia",
-    "#baja",
-]
+const Baja: Tags = {
+    general: ['#lapaz', '#bajacalifornia', '#baja'],
+    priority: [],
+}
 
-const Country: TagOrAccount[] = [
-    "#mexico",
-    "#mexicomagico",
-    "#mexicotravel",
-    "#mexicolindo",
-];
+const Country: Tags = {
+    general: ['#mexico', '#mexicomagico', '#mexicotravel', '#mexicolindo'],
+    priority: ['#fotoexploramx'],
+}
 
-const MexicoCity: TagOrAccount[] = [
-    "#cdmx",
-    "#mexicocity",
-    "#mexicodf",
-];
+const MexicoCity: Tags = {
+    general: ['#cdmx', '#mexicocity', '#mexicodf'],
+    priority: [],
+}
 
 const Mexico = {
     Baja,
@@ -25,4 +21,4 @@ const Mexico = {
     MexicoCity,
 }
 
-export default Mexico;
+export default Mexico

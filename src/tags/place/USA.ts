@@ -1,70 +1,87 @@
-import { TagOrAccount } from "../../types";
+import { Tags } from '../../types'
 
-const Arizona: { State: TagOrAccount[], ApacheJunction: TagOrAccount[] } = {
-    State: [
-        "#arizona",
-        "#az",
-    ],
-    ApacheJunction: [
-        "#myphx",
-        "#cactus",
-        "#cactuslover",
-        "#cactusgram",
-        "#apachejunction",
-        "#phoenix",
-    ],
-};
-
-const Colorado: Record<string, TagOrAccount[]> = {
-    State: [
-        "#colorado",
-        "#coloradophotographer",
-        "#coloradophotography",
-        "#coloradolove",
-    ],
-};
-
-const Montana: Record<string, TagOrAccount[]> = {
-    State: [
-        "#montana",
-        "#montanacolors",
-        "#montanalife",
-        "#montanaliving",
-        "#montanaphotographer",
-    ],
-};
-
-const Louisiana: Record<string, TagOrAccount[]> = {
-    NOLA: [
-        "#nolalove",
-        "#neworleans",
-        "#neworleansphotography",
-        "#nola",
-        "#nolalife"
-    ],
+const Arizona: Record<string, Tags> = {
+    State: {
+        general: ['#arizona', '#az'],
+        priority: [],
+    },
+    ApacheJunction: {
+        general: [
+            '#myphx',
+            '#cactus',
+            '#cactuslover',
+            '#cactusgram',
+            '#apachejunction',
+            '#phoenix',
+        ],
+        priority: [],
+    },
 }
 
-const Utah: Record<string, TagOrAccount[]> = {
-    State: [
-        "#utah",
-        "#utahphotographer",
-        "#utahphotography",
-        "#utahisbeautiful",
-        "#utahtravels",
-        "#utah",
-    ],
-};
+const Colorado: Record<string, Tags> = {
+    State: {
+        general: [
+            '#colorado',
+            '#coloradophotographer',
+            '#coloradophotography',
+            '#coloradolove',
+        ],
+        priority: [],
+    },
+}
 
-const Vermont: Record<string, TagOrAccount[]> = {
-    State: [
-        '@vermonttourism',
-        "#vermont",
-        "#newenglandphotography",
-        "#thisisvermont",
-        "#vermontlife",
-        "#vermontshots"
-    ],
-};
+const Montana: Record<string, Tags> = {
+    State: {
+        general: [
+            '#montana',
+            '#montanacolors',
+            '#montanalife',
+            '#montanaliving',
+            '#montanaphotographer',
+        ],
+        priority: [],
+    },
+}
+
+const Louisiana: Record<string, Tags> = {
+    NOLA: {
+        general: [
+            '#nolalove',
+            '#neworleans',
+            '#neworleansphotography',
+            '#nola',
+            '#nolalife',
+        ],
+        priority: [],
+    },
+}
+
+const Utah: Record<string, Tags> = {
+    State: {
+        general: [
+            '#utah',
+            '#utahphotographer',
+            '#utahphotography',
+            '#utahisbeautiful',
+            '#utahtravels',
+        ],
+        priority: [],
+    },
+}
+
+const Vermont: Record<string, Tags> = {
+    State: {
+        general: [
+            '@vermonttourism',
+            '#vermont',
+            '#newenglandphotography',
+            '#thisisvermont',
+            '#vermontlife',
+            '#vermontshots',
+        ],
+        priority: [],
+    },
+}
 
 const USA = {
     Arizona,
@@ -72,7 +89,7 @@ const USA = {
     Louisiana,
     Montana,
     Utah,
-    Vermont
-};
+    Vermont,
+}
 
-export default USA;
+export default USA

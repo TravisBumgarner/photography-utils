@@ -1,6 +1,9 @@
-import { Metadata, ParsedData, SupportedCameras } from "./types"
+import { Metadata, ParsedData, SupportedCameras } from './types'
 
-const metadataOverride = (camera: SupportedCameras, data: ParsedData): Partial<Metadata> => {
+const metadataOverride = (
+    camera: SupportedCameras,
+    data: ParsedData
+): Partial<Metadata> => {
     let metadataOverrides: Partial<Metadata> = {}
     switch (camera) {
         // Film Scanner
@@ -13,26 +16,26 @@ const metadataOverride = (camera: SupportedCameras, data: ParsedData): Partial<M
                 shutterSpeed: 'REPLACE',
                 aperture: 'REPLACE',
                 focalLength: 'REPLACE',
-                dateTaken: 'REPLACE'
+                dateTaken: 'REPLACE',
             }
             break
         }
         case SupportedCameras.SonyA290: {
             metadataOverrides = {
-                camera: 'Sony A290'
+                camera: 'Sony A290',
             }
             break
         }
         case SupportedCameras.SonyA55: {
             metadataOverrides = {
                 camera: 'Sony A55',
-                lens: data.LensModel === '----' ? '' : data.LensModel // Some lens used resulted in this.
+                lens: data.LensModel === '----' ? '' : data.LensModel, // Some lens used resulted in this.
             }
             break
         }
         case SupportedCameras.SonyRX100: {
             metadataOverrides = {
-                camera: 'Sony RX100'
+                camera: 'Sony RX100',
             }
             break
         }
@@ -41,14 +44,14 @@ const metadataOverride = (camera: SupportedCameras, data: ParsedData): Partial<M
         case SupportedCameras.NikonD5300:
         case SupportedCameras.NikonD7500: {
             const NIKON_LOOKUP = {
-                'NIKON CORPORATION - NIKON D5300': "Nikon D5300",
-                'NIKON CORPORATION - NIKON D3400': "Nikon D3400",
-                'NIKON CORPORATION - NIKON Z 5': "Nikon Z5",
-                'NIKON CORPORATION - NIKON D7500': "Nikon D7500",
+                'NIKON CORPORATION - NIKON D5300': 'Nikon D5300',
+                'NIKON CORPORATION - NIKON D3400': 'Nikon D3400',
+                'NIKON CORPORATION - NIKON Z 5': 'Nikon Z5',
+                'NIKON CORPORATION - NIKON D7500': 'Nikon D7500',
             }
 
             metadataOverrides = {
-                camera: NIKON_LOOKUP[camera]
+                camera: NIKON_LOOKUP[camera],
             }
 
             break
@@ -56,7 +59,7 @@ const metadataOverride = (camera: SupportedCameras, data: ParsedData): Partial<M
         case SupportedCameras.iPhone13: {
             metadataOverrides = {
                 camera: 'iPhone 13',
-                lens: ''
+                lens: '',
             }
             break
         }
@@ -68,30 +71,29 @@ const metadataOverride = (camera: SupportedCameras, data: ParsedData): Partial<M
                 shutterSpeed: 'REPLACE',
                 aperture: 'REPLACE',
                 focalLength: 'REPLACE',
-                dateTaken: 'REPLACE'
+                dateTaken: 'REPLACE',
             }
             break
         }
         case SupportedCameras.MotoX4: {
             metadataOverrides = {
-                lens: ''
+                lens: '',
             }
             break
         }
         case SupportedCameras.CanonEOSRebel: {
-            metadataOverrides = {
-            }
+            metadataOverrides = {}
             break
         }
         case SupportedCameras.Pixel3: {
             metadataOverrides = {
-                lens: ''
+                lens: '',
             }
             break
         }
         case SupportedCameras.DJIMini3Pro: {
             metadataOverrides = {
-                camera: 'DJI Mini 3 Pro'
+                camera: 'DJI Mini 3 Pro',
             }
             break
         }

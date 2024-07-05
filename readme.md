@@ -1,26 +1,28 @@
 # Adding New Photos
 
-1. Select photos
-    - Add them to `01 Potential Pickss`
-2. Select photos 
-    - Add them to `02 Selected`
-3. Tag photos. 
-    - Add new tags in Lightroom and `src/tags` 
-    - Move to `03 Tagged`
+1. Select potential photos by adding them to `01_Potential_Picks`
+2. Select selected photos by browsing `02_Potential_Picks_Not_Selected` and adding them to `03_Selected`
+3. Add Photo Metadata
+    - Add new tags in Lightroom and then add them in `src/tags`
+        - Start with `Camera`
+        - Then `FilmType`
+        - Then the rest of the tags on a per photo basis.
+    - Title and describe photos.
+        - Descriptions are optional. Try and add a `Photography Tip: ...` where possible (and include the tags). 
+        - Write descriptions and use ChatGPT to proofread.
 4. Export photos
-    - Run this script (`yarn main`)
+    - Run this script (`yarn start`)
     - Open Buffer
     - Queue each photo
         - Spellcheck each template
         - Output from template
         - Location
-    - Queue photos and move to `04 Queued`
-5. Once photos are posted
-    - Move to `05 Posted`
+    - Queue photos and move to `04_Queued`
     - Add `Purple` color label. 
+5. Once photos are posted
+    - Move to `05_Posted`
 
 # Setup for New Computer
-
 - Create an Export Template
     - Name it `cameracoffeewander_template_ingest`
     - Export Location

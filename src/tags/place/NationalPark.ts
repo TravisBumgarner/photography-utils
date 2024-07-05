@@ -1,41 +1,40 @@
-import { TagOrAccount } from "../../types";
+import { Tags } from '../../types'
 
-const _USPark: TagOrAccount[] = [
-]
+const _USPark: Tags = {
+    general: [],
+    priority: [],
+}
 
-const _CanadaPark: TagOrAccount[] = [
-]
+const _CanadaPark: Tags = {
+    general: [],
+    priority: [],
+}
 
+const Arches: Tags = {
+    general: [..._USPark.general, '#archesnationalpark'],
+    priority: ['#archesnps', '@archesnps', ..._USPark.priority],
+}
 
-const Arches: TagOrAccount[] = [
-    ..._USPark,
-    "#archesnationalpark",
-    "#archesnps",
-    "@archesnps",
-];
+const Banff: Tags = {
+    general: [
+        ..._CanadaPark.general,
+        '#banff',
+        '#banffnationalpark',
+        '#banffcanada',
+        '#banffalberta',
+    ],
+    priority: ['@banff.national.park', ..._CanadaPark.priority],
+}
 
-const Banff: TagOrAccount[] = [
-    ..._CanadaPark,
-    "#banff",
-    "#banffnationalpark",
-    "#banffcanada",
-    "#banffalberta",
-    "@banff.national.park"
-];
-
-const Glacier: TagOrAccount[] = [
-    ..._USPark,
-    "#glaciernationalpark",
-    "#glaciernps",
-    "@glaciernps",
-];
+const Glacier: Tags = {
+    general: [..._USPark.general, '#glaciernationalpark'],
+    priority: ['#glaciernps', '@glaciernps', ..._USPark.priority],
+}
 
 const NationalPark = {
     Arches,
     Banff,
     Glacier,
-};
+}
 
-
-
-export default NationalPark;
+export default NationalPark

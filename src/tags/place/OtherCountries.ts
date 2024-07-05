@@ -1,16 +1,19 @@
-import { TagOrAccount } from "../../types";
+import { Tags } from '../../types'
 
-const Iceland: Record<string, TagOrAccount[]> = {
-    Country: [
-        "#iceland",
-        "#icelandtravel",
-        "#icelandtrip",
-        "#icelandnature"
-    ]
-};
-
-const OtherCountries = {
-    Iceland
+const Iceland: Record<string, Tags> = {
+    Country: {
+        general: [
+            '#iceland',
+            '#icelandtravel',
+            '#icelandtrip',
+            '#icelandnature',
+        ],
+        priority: [],
+    },
 }
 
-export default OtherCountries;
+const OtherCountries = {
+    Iceland,
+}
+
+export default OtherCountries
