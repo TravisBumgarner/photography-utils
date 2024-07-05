@@ -1,100 +1,106 @@
-import { TagOrAccount } from "../types"
+import { Tags } from '../types'
 
-const _FilmPhotography: TagOrAccount[] = [
-  "#filmphotography",
-  "#filmisnotdead",
-  "#analogphotography",
-  "#analogsunrise",
-  "@analogsunrise"
-]
+const _FilmPhotography: Tags = {
+    general: ['#filmphotography', '#filmisnotdead', '#analogphotography'],
+    priority: ['#analogsunrise', '@analogsunrise'],
+}
 
-const _35mmFilmPhotography: TagOrAccount[] = [
-  ..._FilmPhotography,
-  "#35mm",
-  "#thedaily35mm",
-  "#35mmfilm",
-]
+const _35mmFilmPhotography: Tags = {
+    general: [
+        ..._FilmPhotography.general,
+        '#35mm',
+        '#thedaily35mm',
+        '#35mmfilm',
+    ],
+    priority: [..._FilmPhotography.priority],
+}
 
-const _120mmFilmPhotography: TagOrAccount[] = [
-  ..._FilmPhotography,
-  "#120",
-  "#120film",
-]
+const _120mmFilmPhotography: Tags = {
+    general: [..._FilmPhotography.general, '#120', '#120film'],
+    priority: [..._FilmPhotography.priority],
+}
 
-const _iPhonePhotography: TagOrAccount[] = [
-  "#iphonephotography",
-  "#shotoniphone",
-  "#mobilephotography"
+const _iPhonePhotography: Tags = {
+    general: ['#iphonephotography', '#shotoniphone', '#mobilephotography'],
+    priority: [..._FilmPhotography.priority],
+}
 
-]
+const NikonZ5: Tags = {
+    general: ['#nikon', '#nikonz5', '#nikonphotography', '#nikonphotographer'],
+    priority: [],
+}
 
-const NikonZ5: TagOrAccount[] = [
-  "#nikon",
-  "#nikonz5",
-  "#nikonphotography",
-  "#nikonphotographer",
-]
+const NikonSLR: Tags = {
+    general: [
+        ..._FilmPhotography.general,
+        ..._35mmFilmPhotography.general,
+        '#nikon',
+        '#nikonphotography',
+    ],
+    priority: [..._FilmPhotography.priority, ..._35mmFilmPhotography.priority],
+}
 
-const NikonSLR: TagOrAccount[] = [
-  ..._FilmPhotography,
-  ..._35mmFilmPhotography,
-  "#nikon",
-  "#nikonphotography"
-]
+const NikonD5300: Tags = {
+    general: [
+        '#nikon',
+        '#nikond5300',
+        '#nikonphotography',
+        '#nikonphotographer',
+    ],
+    priority: [],
+}
 
-const NikonD5300: TagOrAccount[] = [
-  "#nikon",
-  "#nikond5300",
-  "#nikonphotography",
-  "#nikonphotographer",
-]
+const Pixel3: Tags = {
+    general: [
+        '#shotonpixel',
+        '#pixel3',
+        '#googlepixel3',
+        '#googlepixel',
+        '#pixelartist',
+    ],
+    priority: [],
+}
 
-const Pixel3: TagOrAccount[] = [
-  "#shotonpixel",
-  "#pixel3",
-  "#googlepixel3",
-  "#googlepixel",
-  "#pixelartist"
-]
+const iPhone13: Tags = {
+    general: [..._iPhonePhotography.general, '#iphone13'],
+    priority: [..._iPhonePhotography.priority],
+}
 
-const iPhone13: TagOrAccount[] = [
-  ..._iPhonePhotography,
-  "#iphone13",
-]
+const iPhone15: Tags = {
+    general: [..._iPhonePhotography.general, '#iphone15'],
+    priority: [..._iPhonePhotography.priority],
+}
 
-const iPhone15: TagOrAccount[] = [
-  ..._iPhonePhotography,
-  "#iphone15"
-]
+const YashicaC: Tags = {
+    general: [..._120mmFilmPhotography.general, '#yashicac', '#yashica'],
+    priority: [..._120mmFilmPhotography.priority],
+}
 
-const YashicaC: TagOrAccount[] = [
-  ..._120mmFilmPhotography,
-  "#yashicac",
-  "#yashica",
-]
+const DJIMini3Pro: Tags = {
+    general: [
+        '#dji',
+        '#djiphotography',
+        '#djidrone',
+        '#djicreator',
+        '#djimini3pro',
+    ],
+    priority: [],
+}
 
-const DJIMini3Pro: TagOrAccount[] = [
-  "#dji",
-  "#djiphotography",
-  "#djidrone",
-  "#djicreator",
-  "#djimini3pro"
-]
-
-const UnknownFilmCamera: TagOrAccount[] = [
-  ..._FilmPhotography,
-  ..._35mmFilmPhotography,
-]
+const UnknownFilmCamera: Tags = {
+    general: [..._FilmPhotography.general, ..._35mmFilmPhotography.general],
+    priority: [..._FilmPhotography.priority, ..._35mmFilmPhotography.priority],
+}
 
 const Camera = {
-  DJIMini3Pro,
-  iPhone13,
-  iPhone15,
-  NikonD5300,
-  NikonSLR,
-  NikonZ5,
-  Pixel3,
-  YashicaC,
-  UnknownFilmCamera
+    DJIMini3Pro,
+    iPhone13,
+    iPhone15,
+    NikonD5300,
+    NikonSLR,
+    NikonZ5,
+    Pixel3,
+    YashicaC,
+    UnknownFilmCamera,
 }
-export default Camera;
+export default Camera

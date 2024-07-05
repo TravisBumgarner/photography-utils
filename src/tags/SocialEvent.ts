@@ -1,28 +1,37 @@
-import { TagOrAccount } from "../types"
+import { Tags } from '../types'
 
-const DayOfTheDead: TagOrAccount[] = [
-    "#dayofthedead",
-    "#DiaDeMuertos",
-    "#DiaDeLosMuertos",
-    "#ddlm",
-    "#marigolds",
-]
+const DayOfTheDead: Tags = {
+    general: [
+        '#dayofthedead',
+        '#DiaDeMuertos',
+        '#DiaDeLosMuertos',
+        '#ddlm',
+        '#marigolds',
+    ],
+    priority: [],
+}
 
-const MexicoCityFireworksFestival: TagOrAccount[] = [
-    "#torostultepec",
-    "#pirotecniatultepec",
-    "#tultepec",
-    "#tultepeccapitaldelapirotécnia",
-    "#fireworks",
-]
+const MexicoCityFireworksFestival: Tags = {
+    general: [
+        '#torostultepec',
+        '#pirotecniatultepec',
+        '#tultepec',
+        '#tultepeccapitaldelapirotécnia',
+        '#fireworks',
+    ],
+    priority: [],
+}
 
-const PrideCelebration: TagOrAccount[] = [
-    "#pride",
-    "#pridemonth",
-    "#equality",
-]
+const PrideCelebration: Tags = {
+    general: ['#pride', '#pridemonth', '#equality'],
+    priority: [],
+}
 
-const SocialEvent = { DayOfTheDead, MexicoCityFireworksFestival, PrideCelebration };
+const SocialEvent = {
+    DayOfTheDead,
+    MexicoCityFireworksFestival,
+    PrideCelebration,
+}
 
-export { DayOfTheDead, MexicoCityFireworksFestival };
-export default SocialEvent;
+export { DayOfTheDead, MexicoCityFireworksFestival }
+export default SocialEvent

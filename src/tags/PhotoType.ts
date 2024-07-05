@@ -1,122 +1,148 @@
-import { TagOrAccount } from '../types'
+import { Tags } from '../types'
 
-const Animals: TagOrAccount[] = [
-  "#animalkingdom",
-  "#naturewanderers",
-  "#animallovers",
-  "#everything_animals",
-]
+const Animals: Tags = {
+    general: [
+        '#animalkingdom',
+        '#naturewanderers',
+        '#animallovers',
+        '#everything_animals',
+    ],
+    priority: [],
+}
 
-const Beach: TagOrAccount[] = [
-  "#beautifulbeaches",
-  "#beach",
-  "#beaches",
-]
+const Beach: Tags = {
+    general: ['#beautifulbeaches', '#beach', '#beaches'],
+    priority: [],
+}
 
-const Leaves: TagOrAccount[] = [
-  "#leafpeeping",
-  "#autumnleaves",
-  "#fallcolors",
-]
+const Leaves: Tags = {
+    general: ['#leafpeeping', '#autumnleaves', '#fallcolors'],
+    priority: [],
+}
 
-const BlackAndWhite: TagOrAccount[] = [
-  "#bnw",
-  "#bnwphotography",
-  "#bnwmood",
-  "#bnw_captures",
-  "#bnwphoto",
-]
+const BlackAndWhite: Tags = {
+    general: [
+        '#bnw',
+        '#bnwphotography',
+        '#bnwmood',
+        '#bnw_captures',
+        '#bnwphoto',
+    ],
+    priority: [],
+}
 
-const Clouds: TagOrAccount[] = [
-  "#clouds",
-  "#cloudscape",
-  "#cloudchaser",
-  "#cloudphotography",
-  "#cloudlovers",
-]
+const Cars: Tags = {
+    general: [
+        '#cars',
+        '#carsdaily',
+        '#carlovers',
+        '#carswithoutlimits',
+        '#carstagram',
+    ],
+    priority: [],
+}
 
-const Flowers: TagOrAccount[] = [
-  "#flowers",
-  "#flowerslovers",
-  "#flowersphotography",
-  "#flowersmakemehappy"
-]
+const Clouds: Tags = {
+    general: [
+        '#clouds',
+        '#cloudscape',
+        '#cloudchaser',
+        '#cloudphotography',
+        '#cloudlovers',
+    ],
+    priority: [],
+}
 
-const Landscape: TagOrAccount[] = [
-  "#landscapephotography",
-  "#landscape_collection",
-  "#landscapelover"
-]
+const Flowers: Tags = {
+    general: [
+        '#flowers',
+        '#flowerslovers',
+        '#flowersphotography',
+        '#flowersmakemehappy',
+    ],
+    priority: [],
+}
 
-const Portrait: TagOrAccount[] = [
-  "#mundusmag",
-  "#portraitphotography",
-  "#portrait"
-]
+const Landscape: Tags = {
+    general: [
+        '#landscapephotography',
+        '#landscape_collection',
+        '#landscapelover',
+    ],
+    priority: [],
+}
 
-const Selfie: TagOrAccount[] = [
-  "#selfie",
-  '#photographicselfportrait',
-  "#artisticselfie",
-]
+const Portrait: Tags = {
+    general: ['#portraitphotography', '#portrait'],
+    priority: ['#mundusmag'],
+}
 
-const Shadows = [
-  "#shadows_magazine",
-  "#shadows",
-  "#shadowart",
-]
+const Selfie: Tags = {
+    general: ['#selfie', '#photographicselfportrait', '#artisticselfie'],
+    priority: [],
+}
 
-const Stars: TagOrAccount[] = [
-  "#astrophotography",
-  "#moonlovers",
-  "#astronomy",
-  "#nightshooters",
-  "#nightimages",
-  "@milkyway_nightscape",
-  "#milkyway_nightscape_"
-]
+const Shadows: Tags = {
+    general: ['#shadows', '#shadowart'],
+    priority: ['#shadows_magazine'],
+}
 
-const Storms: TagOrAccount[] = [
-  "#lightening",
-  "#stormphotography",
-  "#stormchasers",
-  "#stormclouds",
-  "#thunderstorms",
-  "#dpsp_rainshots"
-]
+const Stars: Tags = {
+    general: [
+        '#astrophotography',
+        '#moonlovers',
+        '#astronomy',
+        '#nightshooters',
+        '#nightimages',
+    ],
+    priority: ['@milkyway_nightscape', '#milkyway_nightscape_'],
+}
 
-const Street: TagOrAccount[] = [
-  "#street_perfection",
-  "#streetphotography",
-  "#street",
-  "#streetphotographers",
-  "#streetclassics",
-  "#streetdreamsmag",
-  "#streetphotographer"
-]
+const Storms: Tags = {
+    general: [
+        '#lightening',
+        '#stormphotography',
+        '#stormchasers',
+        '#stormclouds',
+        '#thunderstorms',
+        '#dpsp_rainshots',
+    ],
+    priority: [],
+}
 
-const Sunsets: TagOrAccount[] = [
-  "#sunset",
-  "#sunsetlovers",
-  "#sunsets",
+const Street: Tags = {
+    general: [
+        '#street_perfection',
+        '#streetphotography',
+        '#street',
+        '#streetphotographers',
+        '#streetclassics',
+        '#streetphotographer',
+    ],
+    priority: ['#streetdreamsmag'],
+}
 
-]
+const Sunsets: Tags = {
+    general: ['#sunset', '#sunsetlovers', '#sunsets'],
+    priority: [],
+}
 
 const PhotoType = {
-  Animals,
-  Beach,
-  BlackAndWhite,
-  Clouds,
-  Flowers,
-  Landscape,
-  Leaves,
-  Portrait,
-  Selfie,
-  Stars,
-  Shadows,
-  Storms,
-  Street,
-  Sunsets
+    Animals,
+    Beach,
+    BlackAndWhite,
+    Cars,
+    Clouds,
+    Flowers,
+    Landscape,
+    Leaves,
+    Portrait,
+    Selfie,
+    Stars,
+    Shadows,
+    Storms,
+    Street,
+    Sunsets,
 }
 
 export default PhotoType
