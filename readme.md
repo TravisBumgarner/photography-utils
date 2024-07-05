@@ -9,10 +9,7 @@
         - Then the rest of the tags on a per photo basis.
     - Title and describe photos.
         - Descriptions are optional. Try and add a `Photography Tip` where possible (and include the tags). 
-        - Write descriptions in Hemmingway app.
-    - Brows `04_...` and add them to `05_Tagged_Titled_And_Described`
-
-
+        - Write descriptions and use ChatGPT to proofread.
 4. Export photos
     - Run this script (`yarn main`)
     - Open Buffer
@@ -20,10 +17,10 @@
         - Spellcheck each template
         - Output from template
         - Location
-    - Queue photos and move to `04 Queued`
-5. Once photos are posted
-    - Move to `05 Posted`
+    - Queue photos and move to `04_Queued`
     - Add `Purple` color label. 
+5. Once photos are posted
+    - Move to `05_Posted`
 
 # Setup for New Computer
 - Create an Export Template
