@@ -10,6 +10,15 @@ const Animals: Tags = {
     priority: [],
 }
 
+const Architecture: Tags = {
+    general: [
+        '#architecture',
+        '#architecturelovers',
+        '#architecturephotography',
+    ],
+    priority: [],
+}
+
 const Beach: Tags = {
     general: ['#beautifulbeaches', '#beach', '#beaches'],
     priority: [],
@@ -129,6 +138,7 @@ const Sunsets: Tags = {
 
 const PhotoType = {
     Animals,
+    Architecture,
     Beach,
     BlackAndWhite,
     Cars,
