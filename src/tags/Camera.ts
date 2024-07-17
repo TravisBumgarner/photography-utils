@@ -22,7 +22,7 @@ const _120mmFilmPhotography: Tags = {
 
 const _iPhonePhotography: Tags = {
     general: ['#iphonephotography', '#shotoniphone', '#mobilephotography'],
-    priority: [..._FilmPhotography.priority],
+    priority: [],
 }
 
 const NikonZ5: Tags = {
@@ -76,6 +76,16 @@ const YashicaC: Tags = {
     priority: [..._120mmFilmPhotography.priority],
 }
 
+const PentaxK1000: Tags = {
+    general: [
+        ..._35mmFilmPhotography.general,
+        '#pentax',
+        '#k1000',
+        '#pentaxk1000',
+    ],
+    priority: [..._35mmFilmPhotography.priority],
+}
+
 const DJIMini3Pro: Tags = {
     general: [
         '#dji',
@@ -85,6 +95,15 @@ const DJIMini3Pro: Tags = {
         '#djimini3pro',
     ],
     priority: [],
+}
+
+const OlympusPS: Tags = {
+    general: [
+        ..._35mmFilmPhotography.general,
+        '#olympusphotography',
+        '#olympuscamera',
+    ],
+    priority: [..._35mmFilmPhotography.priority],
 }
 
 const UnknownFilmCamera: Tags = {
@@ -99,6 +118,8 @@ const Camera = {
     NikonD5300,
     NikonSLR,
     NikonZ5,
+    OlympusPS,
+    PentaxK1000,
     Pixel3,
     YashicaC,
     UnknownFilmCamera,
