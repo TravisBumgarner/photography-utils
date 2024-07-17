@@ -22,7 +22,7 @@ const _120mmFilmPhotography: Tags = {
 
 const _iPhonePhotography: Tags = {
     general: ['#iphonephotography', '#shotoniphone', '#mobilephotography'],
-    priority: [..._FilmPhotography.priority],
+    priority: [],
 }
 
 const NikonZ5: Tags = {
