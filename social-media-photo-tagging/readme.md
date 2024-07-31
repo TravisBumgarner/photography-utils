@@ -1,3 +1,7 @@
+# About
+
+App For Tagging Photos for Instagram by reading EXIF data from Adobe Lightroom
+
 # Adding New Photos
 
 1. Select potential photos by adding them to `01_Potential_Picks`
