@@ -15,8 +15,9 @@ const App: React.FC = () => {
 
   return (
     <div style={{textAlign: 'center'}}>
-      <h1>Select Images</h1>
-      <p>Hey, thanks for your help! Tap a photo to select (red boarder appears). Tap again to deselect. </p>
+      <h1>Hey, thanks for your help! </h1>
+      <p>Tap a photo to select (red boarder appears). Tap again to deselect. </p>
+      <p>Scroll to the bottom to submit</p>
       <ImageToggleForm images={images} onSubmit={handleFormSubmit} />
     </div>
   );
