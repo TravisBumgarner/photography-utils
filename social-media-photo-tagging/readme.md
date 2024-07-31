@@ -25,7 +25,7 @@ App For Tagging Photos for Instagram by reading EXIF data from Adobe Lightroom
     - Add `Purple` color label. 
 5. Once photos are posted
     - Move to `05_Posted`
-
+w
 # Setup for New Computer
 - Create an Export Template
     - Name it `cameracoffeewander_template_ingest`
