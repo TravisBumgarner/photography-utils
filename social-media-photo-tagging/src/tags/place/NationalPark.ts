@@ -2,7 +2,7 @@ import { Tags } from '../../types'
 
 const _USPark: Tags = {
     general: [],
-    priority: [],
+    priority: ['#nationalparkgeek'],
 }
 
 const _CanadaPark: Tags = {

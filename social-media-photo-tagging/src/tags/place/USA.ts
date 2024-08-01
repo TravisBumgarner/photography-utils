@@ -65,7 +65,12 @@ const Utah: Record<string, Tags> = {
             '#utahisbeautiful',
             '#utahtravels',
         ],
-        priority: [],
+        priority: [
+            '#utahscanyoncountry',
+            '@only.in.utah',
+            '@visitmoab',
+            '#visitmoab',
+        ],
     },
 }
 
