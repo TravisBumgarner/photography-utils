@@ -50,6 +50,16 @@ const NikonD5300: Tags = {
     priority: [],
 }
 
+const NikonD7500: Tags = {
+    general: [
+        '#nikon',
+        '#nikond7500',
+        '#nikonphotography',
+        '#nikonphotographer',
+    ],
+    priority: [],
+}
+
 const Pixel3: Tags = {
     general: [
         '#shotonpixel',
@@ -116,6 +126,7 @@ const Camera = {
     iPhone13,
     iPhone15,
     NikonD5300,
+    NikonD7500,
     NikonSLR,
     NikonZ5,
     OlympusPS,
