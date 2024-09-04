@@ -2,22 +2,22 @@ import { Tags } from '../types'
 
 const _FilmPhotography: Tags = {
     general: ['#filmphotography', '#filmisnotdead', '#analogphotography'],
-    priority: ['#analogsunrise', '@analogsunrise'],
+    priority: [
+        '#analogsunrise',
+        '@analogsunrise',
+        '#shootfilmmag',
+        '@shootfilmworld',
+    ],
 }
 
 const _35mmFilmPhotography: Tags = {
-    general: [
-        ..._FilmPhotography.general,
-        '#35mm',
-        '#thedaily35mm',
-        '#35mmfilm',
-    ],
-    priority: [..._FilmPhotography.priority],
+    general: ['#35mm', '#thedaily35mm', '#35mmfilm'],
+    priority: [],
 }
 
 const _120mmFilmPhotography: Tags = {
-    general: [..._FilmPhotography.general, '#120', '#120film'],
-    priority: [..._FilmPhotography.priority],
+    general: ['#120', '#120film'],
+    priority: [],
 }
 
 const _iPhonePhotography: Tags = {
@@ -82,18 +82,24 @@ const iPhone15: Tags = {
 }
 
 const YashicaC: Tags = {
-    general: [..._120mmFilmPhotography.general, '#yashicac', '#yashica'],
-    priority: [..._120mmFilmPhotography.priority],
+    general: [
+        ..._FilmPhotography.general,
+        ..._120mmFilmPhotography.general,
+        '#yashicac',
+        '#yashica',
+    ],
+    priority: [..._FilmPhotography.priority, ..._120mmFilmPhotography.priority],
 }
 
 const PentaxK1000: Tags = {
     general: [
+        ..._FilmPhotography.general,
         ..._35mmFilmPhotography.general,
         '#pentax',
         '#k1000',
         '#pentaxk1000',
     ],
-    priority: [..._35mmFilmPhotography.priority],
+    priority: [..._FilmPhotography.priority, ..._35mmFilmPhotography.priority],
 }
 
 const DJIMini3Pro: Tags = {
@@ -109,11 +115,12 @@ const DJIMini3Pro: Tags = {
 
 const OlympusPS: Tags = {
     general: [
+        ..._FilmPhotography.general,
         ..._35mmFilmPhotography.general,
         '#olympusphotography',
         '#olympuscamera',
     ],
-    priority: [..._35mmFilmPhotography.priority],
+    priority: [..._FilmPhotography.priority, ..._35mmFilmPhotography.priority],
 }
 
 const UnknownFilmCamera: Tags = {
