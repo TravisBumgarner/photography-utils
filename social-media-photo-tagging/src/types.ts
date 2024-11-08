@@ -48,6 +48,7 @@ export const metadataRunType = Record({
     tags: ArrayRunType(String),
     title: String,
     description: String,
+    id: String,
 })
 export type Metadata = Static<typeof metadataRunType>
 

@@ -1,6 +1,7 @@
 import * as exifr from 'exifr'
 
 import { format } from 'date-fns'
+import { v5 as uuidv5 } from 'uuid'
 import metadataOverride from './metadataOverride'
 import { Metadata, ParsedData, Sidecar, SupportedCameras } from './types'
 
@@ -10,6 +11,12 @@ const formatShutterSpeed = (shutterSpeed: number) => {
     } else {
         return `${shutterSpeed}s`
     }
+}
+
+const generatePhotoId = (filename: string, date_taken: string) => {
+    const PHOTOS_NAMESPACE = 'deadbeef-beef-491e-99b0-da01ff1f3341'
+
+    return uuidv5(`${filename} ${date_taken}`, PHOTOS_NAMESPACE)
 }
 
 const formatAperture = (focalLength: number) => {
@@ -88,6 +95,7 @@ const processPhoto = async (
         description: sidecar.dc.description?.value || '',
         tags,
         ...metadataOverrides,
+        id: generatePhotoId(data.RawFileName, data.DateTimeOriginal),
     }
 }
 
